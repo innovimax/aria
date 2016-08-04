@@ -724,6 +724,22 @@ var mappingTableLabels = {
               AXSubrole: <code>AXDocument</code><br />
               AXRoleDescription: <code>'document'</code></td>
 				</tr>
+
+        	<tr id="role-map-figure">
+                	<th><a class="role-reference" href="#figure"><code>figure</code></a> [ARIA 1.1]</th>                
+			<td><code>ROLE_SYSTEM_GROUPING</code> + object attribute <code>xml-roles:figure</code></td>
+          		<td><ul><li>Control Type: <code>Group</code></li> 
+				<li>Localized Control Type: <code>"figure"</code></li>
+			    </ul>
+			</td>
+          		<td>
+              			<code>ATK_ROLE_PANEL</code> + object attribute <code>xml-roles:figure</code>
+          		</td>                         
+	  		<td>	AXRole: <code>AXGroup</code><br />
+              			AXSubrole: <code>&lt;nil&gt;</code><br />
+              			AXRoleDescription: <code>'figure'</code></td>
+		</tr>
+
 				<tr id="role-map-form">
 				  <th><a class="role-reference" href="#form"><code>form</code></a> [ARIA 1.1]</th>
 				  <td><code>IAccessible2: IA2_ROLE_LANDMARK</code> + object attribute <code>xml-roles:form</code></td>
@@ -1357,6 +1373,26 @@ var mappingTableLabels = {
               AXSubrole: <code>TabPanel</code><br />
               AXRoleDescription: <code>'tab panel'</code></td>
 				</tr>
+                <tr id="role-map-term">
+                        <th><a class="role-reference" href="#term"><code>term</code></a> [ARIA 1.1]</th>        
+                        <td>
+				<ul>
+					<li><code>ROLE_SYSTEM_LISTITEM</code></li>
+					<li><code>STATE_SYSTEM_READONLY</code></li>
+			</td>                        
+			<td><li>Control Type: <code>ListItem</code></li> 
+                        </td>
+                        <td>
+				<ul>
+                                	<li><code>ATK_ROLE_DESCRIPTION_ITEM</code> </li>
+					<li>Interfaces: <code>AtkTText</code>; <code>AtkHypertext</code></li>
+				</ul>
+                        </td>          
+                        <td>    AXRole: <code>AXGroup</code><br />
+                                AXSubrole: <code>AXTerm</code><br />
+                                AXRoleDescription: <code>'term'</code></td>
+                </tr>
+
 <!-- FIXME: This is commented out because the ARIA Working Group agreed to move the text role to ARIA 2.0,
      but we've not branched for 1.1 yet. Once we have branched, this entire section should be deleted from
      the 1.1 branch and uncommented for the master branch.
@@ -1641,6 +1677,20 @@ var mappingTableLabels = {
                   <td>TBD.</td>
                   <td>TBD.</td>
                 </tr>
+                <tr id="ariaColSpan">
+                  <th><a class="property-reference" href="#aria-colspan"><code>aria-colspan</code></a> [ARIA 1.1]</th>
+                  <td>exposed via <code>IAccessibleTableCell::columnExtent</td>
+                  <td>
+                    <p>TBD</p>
+                  </td>
+                  <td>exposed via atk_table_get_column_extent_at</td>
+                  <td><code>AXColumnIndexRange:
+		      		loc=&lt;column index&gt;
+				len=&lt;colspan value&gt;
+		      </code>
+		  </td>
+                </tr>
+
                 <tr id="ariaControls">
                   <th><a class="property-reference" href="#aria-controls"><code>aria-controls</code></a></th>
                   <td><p>IAccessible2: </p>
