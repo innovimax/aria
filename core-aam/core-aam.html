@@ -1384,7 +1384,7 @@ var mappingTableLabels = {
                         </td>
                         <td>
 				<ul>
-                                	<li><code>ATK_ROLE_DESCRIPTION_ITEM</code> </li>
+                                	<li><code>ROLE_DESCRIPTION_TERM</code> </li>
 					<li>Interfaces: <code>AtkTText</code>; <code>AtkHypertext</code></li>
 				</ul>
                         </td>          
@@ -1681,7 +1681,7 @@ var mappingTableLabels = {
                   <td>
                         <ul>
                                 <li>Expose the value of <code>aria-colcount</code> in object attribute <code>aria-colcount:&lt;value&gt;</code>.
-                                <li>Expose via <code>AccessibleTable</code> interface method <code>atk_table_get_n_colums</code></li>
+                                <li>Expose via <code>AccessibleTable</code> interface method <code>atk_table_get_n_colums()</code></li>
                         </ul>
 
 		  </td>
@@ -1703,7 +1703,7 @@ var mappingTableLabels = {
                   <td>
                         <ul>
                                 <li>Expose the value of <code>aria-colindex</code> in object attribute <code>aria-colindex:&lt;value&gt;</code>.
-                                <li>Expose via <code>AccessibleTableCell</code> interface method <code>atk-table-cell.get-position</code></li>
+                                <li>Expose via <code>AccessibleTableCell</code> interface method <code>atk_table_cell_get_position()</code></li>
                         </ul>
 
 		  </td>
@@ -1723,7 +1723,7 @@ var mappingTableLabels = {
                   <td>
 			<ul>
 				<li>Expose the value of <code>aria-colspan</code> in object attribute <code>aria-colspan:&lt;value&gt;</code>.</li>
-				<li>Expose via <code>AccessibleTableCell</code> interface method <code>atk-table-cell.get-row-column-span</code></td> </li>
+				<li>Expose via <code>AccessibleTableCell</code> interface method <code>atk_table_cell_get_row_column_span()</code></td> </li>
 			</ul>
                   </td>
                   <td><code>AXColumnIndexRange:
@@ -2332,7 +2332,7 @@ var mappingTableLabels = {
                   <td>
                         <ul>
                                 <li>Expose the value of <code>aria-rowcount</code> in object attribute <code>aria-rowcount:&lt;value&gt;</code>.
-                                <li>Expose via <code>AccessibleTable</code> interface method <code>atk_table_get_n_rows</code></li>
+                                <li>Expose via <code>AccessibleTable</code> interface method <code>atk_table_get_n_rows()</code></li>
                         </ul>
 
                   </td>
@@ -2353,7 +2353,7 @@ var mappingTableLabels = {
  		  <td>
                         <ul>
                                 <li>Expose the value of <code>aria-rowindex</code> in object attribute <code>aria-rowindex:&lt;value&gt;</code>.
-                                <li>Expose via <code>AccessibleTableCell</code> interface method <code>atk_table_cell_get_position</code></li>
+                                <li>Expose via <code>AccessibleTableCell</code> interface method <code>atk_table_cell_get_position()</code></li>
                         </ul>
 		  </td>
                   <td>TBD.</td>
@@ -2371,7 +2371,7 @@ var mappingTableLabels = {
                   <td>
                         <ul>
                                 <li>Expose the value of <code>aria-rowspan</code> in object attribute <code>aria-rowspan:&lt;value&gt;</code>.</li>
-                                <li>Expose via <code>AccessibleTableCell</code> interface method <code>atk-table-cell.get-row-column-span</code></td> </li>
+                                <li>Expose via <code>AccessibleTableCell</code> interface method <code>atk_table_cell_get_row_column_span()</code></td> </li>
                         </ul>
                   </td>
                   <td><code>AXRowIndexRange:
