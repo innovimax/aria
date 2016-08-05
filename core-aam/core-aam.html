@@ -1681,7 +1681,7 @@ var mappingTableLabels = {
                   <th><a class="property-reference" href="#aria-colspan"><code>aria-colspan</code></a> [ARIA 1.1]</th>
                   <td>exposed via <code>IAccessibleTableCell::columnExtent</td>
                   <td>
-                    <p>TBD</p>
+                    exposed via <code>ColumnSpan</code> in the <code>GridItem</code> pattern
                   </td>
                   <td>exposed via atk_table_get_column_extent_at</td>
                   <td><code>AXColumnIndexRange:
@@ -2286,6 +2286,20 @@ var mappingTableLabels = {
                   <td>TBD.</td>
                   <td>TBD.</td>
                 </tr>
+		<tr id="ariaColSpan">
+                  <th><a class="property-reference" href="#aria-rowspan"><code>aria-rowspan</code></a> [ARIA 1.1]</th>
+		  <td>exposed via <code>IAccessibleTableCell::rowExtent</td>
+                  <td>
+                    exposed via <code>RowSpan</code> in the <code>GridItem</code> pattern
+                  </td>
+                  <td>exposed via atk_table_get_row_extent_at</td>
+                  <td><code>AXRowIndexRange:
+                                loc=&lt;row index&gt;
+                                len=&lt;rowspan value&gt;
+                      </code>
+                  </td>
+                </tr>
+
                 <tr id="ariaSelectedTrue">
                   <th><a class="state-reference" href="#aria-selected"><code>aria-selected</code></a><code>=&quot;true&quot;</code> (state)</th>
                   <td>Expose <code>STATE_SYSTEM_SELECTED</code>
