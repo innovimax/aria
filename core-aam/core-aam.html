@@ -1385,7 +1385,7 @@ var mappingTableLabels = {
                         <td>
 				<ul>
                                 	<li><code>ROLE_DESCRIPTION_TERM</code> </li>
-					<li>Interfaces: <code>AtkTText</code>; <code>AtkHypertext</code></li>
+					<li>Interfaces: <code>AtkText</code>; <code>AtkHypertext</code></li>
 				</ul>
                         </td>          
                         <td>    AXRole: <code>AXGroup</code><br />
@@ -1671,7 +1671,7 @@ var mappingTableLabels = {
                   <th><a class="property-reference" href="#aria-colcount"><code>aria-colcount</code></a> [ARIA 1.1]</th>
                   <td>
 			<ul>
-				<li>Expose the value of <code>aria-colcount</code> in object attribute <code>aria-colcount:&lt;value&gt;</code>.
+				<li>Expose the value of <code>aria-colcount</code> in object attribute <code>colcount:&lt;value&gt;</code>.
 				<li>Expose via <code>GroupPosition</code> interface on cell and gridcell</li>
 			</ul>
 		  </td>
@@ -1680,7 +1680,7 @@ var mappingTableLabels = {
                   </td>
                   <td>
                         <ul>
-                                <li>Expose the value of <code>aria-colcount</code> in object attribute <code>aria-colcount:&lt;value&gt;</code>.
+                                <li>Expose the value of <code>aria-colcount</code> in object attribute <code>colcount:&lt;value&gt;</code>.
                                 <li>Expose via <code>AccessibleTable</code> interface method <code>atk_table_get_n_colums()</code></li>
                         </ul>
 
@@ -1691,7 +1691,7 @@ var mappingTableLabels = {
                   <th><a class="property-reference" href="#aria-colindex"><code>aria-colindex</code></a> [ARIA 1.1]</th>
                   <td>
                         <ul>
-                                <li>Exposed the value of <code>aria-colindex</code> in object attribute <code>aria-colindex:&lt;value&gt;</code>.
+                                <li>Exposed the value of <code>aria-colindex</code> in object attribute <code>colindex:&lt;value&gt;</code>.
                                 <li>Exposed via <code>GroupPosition</code> interface on cell and gridcell</li>
                         </ul>
 
@@ -1702,7 +1702,7 @@ var mappingTableLabels = {
                   </td>
                   <td>
                         <ul>
-                                <li>Expose the value of <code>aria-colindex</code> in object attribute <code>aria-colindex:&lt;value&gt;</code>.
+                                <li>Expose the value of <code>aria-colindex</code> in object attribute <code>colindex:&lt;value&gt;</code>.
                                 <li>Expose via <code>AccessibleTableCell</code> interface method <code>atk_table_cell_get_position()</code></li>
                         </ul>
 
@@ -1713,7 +1713,7 @@ var mappingTableLabels = {
                   <th><a class="property-reference" href="#aria-colspan"><code>aria-colspan</code></a> [ARIA 1.1]</th>
                   <td>
                         <ul>
-                                <li>Expose the value of <code>aria-colspan</code> in object attribute <code>aria-colspan:&lt;value&gt;</code>.</li>
+                                <li>Expose the value of <code>aria-colspan</code> in object attribute <code>colspan:&lt;value&gt;</code>.</li>
 				<li>Expose via <code>IAccessibleTableCell::columnExtent</li>
 			</ul>
 		  </td>
@@ -1722,7 +1722,7 @@ var mappingTableLabels = {
                   </td>
                   <td>
 			<ul>
-				<li>Expose the value of <code>aria-colspan</code> in object attribute <code>aria-colspan:&lt;value&gt;</code>.</li>
+				<li>Expose the value of <code>aria-colspan</code> in object attribute <code>colspan:&lt;value&gt;</code>.</li>
 				<li>Expose via <code>AccessibleTableCell</code> interface method <code>atk_table_cell_get_row_column_span()</code></td> </li>
 			</ul>
                   </td>
@@ -2322,7 +2322,7 @@ var mappingTableLabels = {
                   <th><a class="property-reference" href="#aria-rowcount"><code>aria-rowcount</code></a> [ARIA 1.1]</th>
                   <td>
                         <ul>
-                                <li>Expose the value of <code>aria-rowcount</code> in object attribute <code>aria-colcount:&lt;value&gt;</code>.
+                                <li>Expose the value of <code>aria-rowcount</code> in object attribute <code>rowcount:&lt;value&gt;</code>.
                                 <li>Expose via <code>GroupPosition</code> interface on row</li>
                         </ul>
                   </td>
@@ -2331,7 +2331,7 @@ var mappingTableLabels = {
                   </td>
                   <td>
                         <ul>
-                                <li>Expose the value of <code>aria-rowcount</code> in object attribute <code>aria-rowcount:&lt;value&gt;</code>.
+                                <li>Expose the value of <code>aria-rowcount</code> in object attribute <code>rowcount:&lt;value&gt;</code>.
                                 <li>Expose via <code>AccessibleTable</code> interface method <code>atk_table_get_n_rows()</code></li>
                         </ul>
 
@@ -2342,7 +2342,7 @@ var mappingTableLabels = {
                   <th><a class="property-reference" href="#aria-rowindex"><code>aria-rowindex</code></a> [ARIA 1.1]</th>
 		  <td>
                         <ul>
-                                <li>Expose the value of <code>aria-rowindex</code> in object attribute <code>aria-rowindex:&lt;value&gt;</code>.
+                                <li>Expose the value of <code>aria-rowindex</code> in object attribute <code>rowindex:&lt;value&gt;</code>.
                                 <li>Expose via <code>GroupPosition</code> interface on row</li>
                         </ul>
 		  </td>
@@ -2352,7 +2352,7 @@ var mappingTableLabels = {
                   </td>
  		  <td>
                         <ul>
-                                <li>Expose the value of <code>aria-rowindex</code> in object attribute <code>aria-rowindex:&lt;value&gt;</code>.
+                                <li>Expose the value of <code>aria-rowindex</code> in object attribute <code>rowindex:&lt;value&gt;</code>.
                                 <li>Expose via <code>AccessibleTableCell</code> interface method <code>atk_table_cell_get_position()</code></li>
                         </ul>
 		  </td>
@@ -2362,7 +2362,7 @@ var mappingTableLabels = {
                   <th><a class="property-reference" href="#aria-rowspan"><code>aria-rowspan</code></a> [ARIA 1.1]</th>
 		  <td>
                         <ul>                                
-				<li>Expose the value of <code>aria-rowspan</code> in object attribute <code>aria-rowspan:&lt;value&gt;</code>.</li>
+				<li>Expose the value of <code>aria-rowspan</code> in object attribute <code>rowspan:&lt;value&gt;</code>.</li>
                                 <li>Expose via <code>IAccessibleTableCell::rowExtent</li>
                         </ul>
                   <td>
@@ -2370,7 +2370,7 @@ var mappingTableLabels = {
                   </td>
                   <td>
                         <ul>
-                                <li>Expose the value of <code>aria-rowspan</code> in object attribute <code>aria-rowspan:&lt;value&gt;</code>.</li>
+                                <li>Expose the value of <code>aria-rowspan</code> in object attribute <code>rowspan:&lt;value&gt;</code>.</li>
                                 <li>Expose via <code>AccessibleTableCell</code> interface method <code>atk_table_cell_get_row_column_span()</code></td> </li>
                         </ul>
                   </td>
