@@ -1667,23 +1667,65 @@ var mappingTableLabels = {
                   <td><a href="#not_mapped">Not mapped</a></td>
                   <td><a href="#not_mapped">Not mapped</a></td>
                 </tr>
+                <tr id="ariaColCount">
+                  <th><a class="property-reference" href="#aria-colcount"><code>aria-colcount</code></a> [ARIA 1.1]</th>
+                  <td>
+			<ul>
+				<li>Expose the value of <code>aria-colcount</code> in object attribute <code>aria-colcount:&lt;value&gt;</code>.
+				<li>Expose via <code>GroupPosition</code> interface on cell and gridcell</li>
+			</ul>
+		  </td>
+                  <td>
+                    TBD.
+                  </td>
+                  <td>
+                        <ul>
+                                <li>Expose the value of <code>aria-colcount</code> in object attribute <code>aria-colcount:&lt;value&gt;</code>.
+                                <li>Expose via <code>AccessibleTable</code> interface method <code>atk_table_get_n_colums</code></li>
+                        </ul>
+
+		  </td>
+                  <td>TBD.</td>
+		</tr>
                 <tr id="ariaColIndex">
                   <th><a class="property-reference" href="#aria-colindex"><code>aria-colindex</code></a> [ARIA 1.1]</th>
-                  <td>TBD.</td>
+                  <td>
+                        <ul>
+                                <li>Exposed the value of <code>aria-colindex</code> in object attribute <code>aria-colindex:&lt;value&gt;</code>.
+                                <li>Exposed via <code>GroupPosition</code> interface on cell and gridcell</li>
+                        </ul>
+
+		  </td>
                   <td>
                     <p><code>GridItem.Column</code></p>
                     <p>Subtract 1 from the one-based <code>aria-colindex</code> since the UIA value is zero-based.</p>
                   </td>
-                  <td>TBD.</td>
+                  <td>
+                        <ul>
+                                <li>Expose the value of <code>aria-colindex</code> in object attribute <code>aria-colindex:&lt;value&gt;</code>.
+                                <li>Expose via <code>AccessibleTableCell</code> interface method <code>atk-table-cell.get-position</code></li>
+                        </ul>
+
+		  </td>
                   <td>TBD.</td>
                 </tr>
                 <tr id="ariaColSpan">
                   <th><a class="property-reference" href="#aria-colspan"><code>aria-colspan</code></a> [ARIA 1.1]</th>
-                  <td>exposed via <code>IAccessibleTableCell::columnExtent</td>
                   <td>
-                    exposed via <code>ColumnSpan</code> in the <code>GridItem</code> pattern
+                        <ul>
+                                <li>Expose the value of <code>aria-colspan</code> in object attribute <code>aria-colspan:&lt;value&gt;</code>.</li>
+				<li>Expose via <code>IAccessibleTableCell::columnExtent</li>
+			</ul>
+		  </td>
+                  <td>
+                    Exposed via <code>ColumnSpan</code> in the <code>GridItem</code> pattern
                   </td>
-                  <td>exposed via atk_table_get_column_extent_at</td>
+                  <td>
+			<ul>
+				<li>Expose the value of <code>aria-colspan</code> in object attribute <code>aria-colspan:&lt;value&gt;</code>.</li>
+				<li>Expose via <code>AccessibleTableCell</code> interface method <code>atk-table-cell.get-row-column-span</code></td> </li>
+			</ul>
+                  </td>
                   <td><code>AXColumnIndexRange:
 		      		loc=&lt;column index&gt;
 				len=&lt;colspan value&gt;
@@ -2276,23 +2318,62 @@ var mappingTableLabels = {
                   <td>Expose the description string in object attribute <code>roledescription:&lt;value&gt;</code>.</td>
                   <td>AXRoleDescription: <code>'&lt;value&gt;'</code>.</td>
                 </tr>
+                <tr id="ariaRowCount">
+                  <th><a class="property-reference" href="#aria-rowcount"><code>aria-rowcount</code></a> [ARIA 1.1]</th>
+                  <td>
+                        <ul>
+                                <li>Expose the value of <code>aria-rowcount</code> in object attribute <code>aria-colcount:&lt;value&gt;</code>.
+                                <li>Expose via <code>GroupPosition</code> interface on row</li>
+                        </ul>
+                  </td>
+                  <td>
+                    TBD.
+                  </td>
+                  <td>
+                        <ul>
+                                <li>Expose the value of <code>aria-rowcount</code> in object attribute <code>aria-rowcount:&lt;value&gt;</code>.
+                                <li>Expose via <code>AccessibleTable</code> interface method <code>atk_table_get_n_rows</code></li>
+                        </ul>
+
+                  </td>
+                  <td>TBD.</td>
+                </tr>
                 <tr id="ariaRowIndex">
                   <th><a class="property-reference" href="#aria-rowindex"><code>aria-rowindex</code></a> [ARIA 1.1]</th>
-                  <td>TBD.</td>
+		  <td>
+                        <ul>
+                                <li>Expose the value of <code>aria-rowindex</code> in object attribute <code>aria-rowindex:&lt;value&gt;</code>.
+                                <li>Expose via <code>GroupPosition</code> interface on row</li>
+                        </ul>
+		  </td>
                   <td>
                     <p><code>GridItem.Row</code></p>
                     <p>Subtract 1 from the one-based <code>aria-rowindex</code> since the UIA value is zero-based.</p>
                   </td>
-                  <td>TBD.</td>
+ 		  <td>
+                        <ul>
+                                <li>Expose the value of <code>aria-rowindex</code> in object attribute <code>aria-rowindex:&lt;value&gt;</code>.
+                                <li>Expose via <code>AccessibleTableCell</code> interface method <code>atk_table_cell_get_position</code></li>
+                        </ul>
+		  </td>
                   <td>TBD.</td>
                 </tr>
-		<tr id="ariaColSpan">
+		<tr id="ariaRowSpan">
                   <th><a class="property-reference" href="#aria-rowspan"><code>aria-rowspan</code></a> [ARIA 1.1]</th>
-		  <td>exposed via <code>IAccessibleTableCell::rowExtent</td>
+		  <td>
+                        <ul>                                
+				<li>Expose the value of <code>aria-rowspan</code> in object attribute <code>aria-rowspan:&lt;value&gt;</code>.</li>
+                                <li>Expose via <code>IAccessibleTableCell::rowExtent</li>
+                        </ul>
                   <td>
-                    exposed via <code>RowSpan</code> in the <code>GridItem</code> pattern
+                    Expose via <code>RowSpan</code> in the <code>GridItem</code> pattern
                   </td>
-                  <td>exposed via atk_table_get_row_extent_at</td>
+                  <td>
+                        <ul>
+                                <li>Expose the value of <code>aria-rowspan</code> in object attribute <code>aria-rowspan:&lt;value&gt;</code>.</li>
+                                <li>Expose via <code>AccessibleTableCell</code> interface method <code>atk-table-cell.get-row-column-span</code></td> </li>
+                        </ul>
+                  </td>
                   <td><code>AXRowIndexRange:
                                 loc=&lt;row index&gt;
                                 len=&lt;rowspan value&gt;
