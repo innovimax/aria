@@ -724,6 +724,26 @@ var mappingTableLabels = {
               AXSubrole: <code>AXDocument</code><br />
               AXRoleDescription: <code>'document'</code></td>
 				</tr>
+                <tr id="role-map-feed">
+                        <th><a class="role-reference" href="#feed"><code>feed</code></a> [ARIA 1.1]</th>          
+                        <td>
+				Need to verify. 
+				<code>ROLE_SYSTEM_GROUPING</code> + object attribute <code>xml-roles:feed</code></td>
+                        <td>
+                            Need to verify. 
+			    <ul><li>Control Type: <code>Group</code></li>
+                                <li>Localized Control Type: <code>"feed"</code></li>
+                            </ul>
+                        </td>
+                        <td>
+                                <code>ROLE_PANEL</code> + object attribute <code>xml-roles:feed</code>
+                        </td>
+                        <td>
+				Need to verify. 
+			        AXRole: <code>AXGroup</code><br />
+                                AXSubrole: <code>&lt;nil&gt;</code><br />
+                                AXRoleDescription: <code>'group'</code></td>
+                </tr>
 
         	<tr id="role-map-figure">
                 	<th><a class="role-reference" href="#figure"><code>figure</code></a> [ARIA 1.1]</th>                
@@ -1779,6 +1799,14 @@ var mappingTableLabels = {
                     <p>If the referenced objects are in the accessibility tree, expose reverse relations as described in <a href="#mapping_additional_relations">Relations</a>.</p></td>
                   <td>Use in calculating the accessible description as described in <a href="#mapping_additional_nd">Name Computation</a> and expose  value as <code>string AXHelp</code>.</td>
                 </tr>
+                <tr id="ariaDetails">
+                  <th>[ARIA 1.1] <a class="property-reference" href="#aria-details"><code>aria-details</code></a></th>
+                  <td>TBD.</td>
+                  <td>TBD.</td>
+                  <td>TBD.</td>
+                  <td>TBD.</td>
+                </tr>
+
                 <tr id="ariaDisabledTrue">
                   <th><a class="state-reference" href="#aria-disabled"><code>aria-disabled</code></a><code>=&quot;true&quot;</code> (state)</th>
                   <td>Set <code>STATE_SYSTEM_UNAVAILABLE</code>
