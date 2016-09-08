@@ -1398,6 +1398,7 @@ var mappingTableLabels = {
 				<ul>
 					<li><code>ROLE_SYSTEM_LISTITEM</code></li>
 					<li><code>STATE_SYSTEM_READONLY</code></li>
+				</ul>
 			</td>                        
 			<td><li>Control Type: <code>ListItem</code></li> 
                         </td>
@@ -1739,7 +1740,7 @@ var mappingTableLabels = {
                   <td>
                         <ul>
                                 <li>Expose the value of <code>aria-colspan</code> in object attribute <code>colspan:&lt;value&gt;</code>.</li>
-				<li>Expose via <code>IAccessibleTableCell::columnExtent</li>
+				<li>Expose via <code>IAccessibleTableCell::columnExtent</code></li>
 			</ul>
 		  </td>
                   <td>
@@ -1748,7 +1749,7 @@ var mappingTableLabels = {
                   <td>
 			<ul>
 				<li>Expose the value of <code>aria-colspan</code> in object attribute <code>colspan:&lt;value&gt;</code>.</li>
-				<li>Expose via <code>AccessibleTableCell</code> interface method <code>atk_table_cell_get_row_column_span()</code></td> </li>
+				<li>Expose via <code>AccessibleTableCell</code> interface method <code>atk_table_cell_get_row_column_span()</code></li>
 			</ul>
                   </td>
                   <td><code>AXColumnIndexRange:
@@ -1857,9 +1858,9 @@ var mappingTableLabels = {
                   <td>
                   <p>IAccessible2: </p>
                     <ul>
-                      <li>Expose pointer to the accessible object in <code>IA2_RELATION_ERROR_MESSAGE</code>                      </li>
+                      <li>Expose pointer to the accessible object in <code>IA2_RELATION_ERROR_MESSAGE</code></li>
                       <li>Expose reverse relations as described in <a href="#mapping_additional_relations">Relations</a>.</li>
-
+		    </ul>
 		  </td>
                   <td>Expose pointer to the target accessible object using <code>ControllerFor</code> property.</td>
                   <td>
@@ -2421,7 +2422,7 @@ var mappingTableLabels = {
 		  <td>
                         <ul>                                
 				<li>Expose the value of <code>aria-rowspan</code> in object attribute <code>rowspan:&lt;value&gt;</code>.</li>
-                                <li>Expose via <code>IAccessibleTableCell::rowExtent</li>
+                                <li>Expose via <code>IAccessibleTableCell::rowExtent</code></li>
                         </ul>
                   <td>
                     Expose via <code>RowSpan</code> in the <code>GridItem</code> pattern
@@ -2429,7 +2430,7 @@ var mappingTableLabels = {
                   <td>
                         <ul>
                                 <li>Expose the value of <code>aria-rowspan</code> in object attribute <code>rowspan:&lt;value&gt;</code>.</li>
-                                <li>Expose via <code>AccessibleTableCell</code> interface method <code>atk_table_cell_get_row_column_span()</code></td> </li>
+                                <li>Expose via <code>AccessibleTableCell</code> interface method <code>atk_table_cell_get_row_column_span()</code></li>
                         </ul>
                   </td>
                   <td><code>AXRowIndexRange:
