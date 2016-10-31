@@ -513,7 +513,8 @@ var mappingTableLabels = {
 				<tr id="role-map-alertdialog">
 					<th><a class="role-reference" href="#alertdialog"><code>alertdialog</code></a></th>
 					<td><code>ROLE_SYSTEM_DIALOG</code><br />
-                        <p>The user agent SHOULD fire <code>EVENT_SYSTEM_ALERT</code> <sup>[<a href="#ftn.note2">Note 2</a>]</sup></p></td>
+                        <p>The user agent SHOULD fire <code>EVENT_SYSTEM_ALERT</code> <sup>[<a href="#ftn.note2">Note 2</a>]</sup></p>
+					    <p class="ednote">Any IAccessible/IAccessible2 "Window" interface?</p>
                     <td><code>Pane</code><br />
                         <p>The user agent SHOULD fire a system alert event.<sup>[<a href="#ftn.note2">Note 2</a>]</sup></p></td>
 					<td>
@@ -545,7 +546,7 @@ var mappingTableLabels = {
 				<tr id="role-map-article">
 					<th><a class="role-reference" href="#article"><code>article</code></a></th>
 					<td><code>ROLE_SYSTEM_DOCUMENT</code> + <code>STATE_SYSTEM_READONLY</code>
-					    <p>IAccessible2: Object attribute <code>xml-roles:article</code> </p></td>
+					    <p>Object attribute <code>xml-roles:article</code> </p></td>
                     <td>
                         <ul>
                             <li>Control Type is <code>Group</code>.</li>
@@ -560,7 +561,7 @@ var mappingTableLabels = {
 				</tr>
 				<tr id="role-map-banner">
 					<th><a class="role-reference" href="#banner"><code>banner</code></a> [ARIA 1.1]</th>
-					<td>IAccessible2: <code>IA2_ROLE_LANDMARK</code> and object attribute <code>xml-roles:banner</code></td>
+					<td><code>IA2_ROLE_LANDMARK</code> and object attribute <code>xml-roles:banner</code></td>
                     <td>
                         <ul>
                             <li>Control Type is <code>Group</code>.</li>
@@ -578,7 +579,7 @@ var mappingTableLabels = {
 					<th><a class="role-reference" href="#button"><code>button</code></a></th>
 					<td><code>ROLE_SYSTEM_PUSHBUTTON</code>
                         <p>If <a class="property-reference" href="#aria-haspopup"><code>aria-haspopup</code></a><code>=&quot;true&quot;</code>, expose as <code>ROLE_SYSTEM_BUTTONMENU</code></p>
-                           IAccessible2: If <a class="state-reference" href="#aria-pressed"><code>aria-pressed</code></a> is not <strong>undefined</strong>, expose as <code>IA2_ROLE_TOGGLE_BUTTON</code></td>
+                           If <a class="state-reference" href="#aria-pressed"><code>aria-pressed</code></a> is not <strong>undefined</strong>, expose as <code>IA2_ROLE_TOGGLE_BUTTON</code></td>
 					<td><code>Button</code></td>               
                     <td><code>ROLE_PUSH_BUTTON</code>
                         <p>If <a class="state-reference" href="#aria-pressed"><code>aria-pressed</code></a> is not <strong>undefined</strong>, expose as <code>ROLE_TOGGLE_BUTTON</code></p></td>
@@ -594,8 +595,11 @@ var mappingTableLabels = {
 				</tr>
 				<tr id="role-map-cell">
 					<th><a class="role-reference" href="#cell"><code>cell</code></a> [ARIA 1.1]</th>
-					<td><code>ROLE_SYSTEM_CELL</code>.
-	                    <p>IAccessible2: Use <code>IAccessibleTableCell</code> interface</p>
+					<td>
+					  <ul>
+					    <li><code>ROLE_SYSTEM_CELL</code></li>
+					    <li>Interface <code>IAccessibleTableCell</code></li>
+					  </ul>
 					</td>
                     <td>
                       <ul>
@@ -617,7 +621,7 @@ var mappingTableLabels = {
 				<tr id="role-map-checkbox">
 					<th><a class="role-reference" href="#checkbox"><code>checkbox</code></a></th>
 					<td><code>ROLE_SYSTEM_CHECKBUTTON</code>
-                        <p>IAccessible2: Object attribute <code>checkable:true</code></p></td>
+                        <p>Object attribute <code>checkable:true</code></p></td>
                     <td><code>Checkbox</code></td>
 					<td><code>ROLE_CHECK_BOX</code> + <code>STATE_CHECKABLE</code></td>
 					<td>AXRole: <code>AXCheckBox</code><br />
@@ -626,8 +630,13 @@ var mappingTableLabels = {
 				</tr>
 				<tr id="role-map-columnheader">
 					<th><a class="role-reference" href="#columnheader"><code>columnheader</code></a></th>
-					<td><code>ROLE_SYSTEM_COLUMNHEADER</code>
-		        <p>IAccessible2: Used to help support <a href="http://accessibility.linuxfoundation.org/a11yspecs/ia2/docs/html/interface_i_accessible_table2.html"><code>AccessibleTable</code></a> for the container <a class="role-reference" href="#grid"><code>grid</code></a> role</p></td>
+					<td>
+					  <ul>
+					    <li><code>ROLE_SYSTEM_COLUMNHEADER</code></li>
+					    <li>Interface <code>IAccessibleTableCell</code></li>
+					    <li>Interface <a href="http://accessibility.linuxfoundation.org/a11yspecs/ia2/docs/html/interface_i_accessible_table2.html"><code>IAccessibleTable2</code></a> for the container <a class="role-reference" href="#grid"><code>grid</code></a> role</li>
+					  </ul>
+					</td>
           <td><code>HeaderItem</code></td>
 					<td>
 					  <ul>
@@ -653,7 +662,7 @@ var mappingTableLabels = {
 				</tr>
 				<tr id="role-map-complementary">
 					<th><a class="role-reference" href="#complementary"><code>complementary</code></a> [ARIA 1.1]</th>
-                    <td>IAccessible2:  <code>IA2_ROLE_LANDMARK</code> and object attribute <code>xml-roles:complementary</code></td>
+                    <td><code>IA2_ROLE_LANDMARK</code> and object attribute <code>xml-roles:complementary</code></td>
                     <td>
                         <ul>
                             <li>Control Type is <code>Group</code>.</li>
@@ -669,7 +678,7 @@ var mappingTableLabels = {
 				</tr>
 				<tr id="role-map-contentinfo">
 					<th><a class="role-reference" href="#contentinfo"><code>contentinfo</code></a> [ARIA 1.1]</th>
-                    <td>IAccessible2:  <code>IA2_ROLE_LANDMARK</code> and object attribute <code>xml-roles:contentinfo</code></td>
+                    <td><code>IA2_ROLE_LANDMARK</code> and object attribute <code>xml-roles:contentinfo</code></td>
                     <td>
                         <ul>
                             <li>Control Type is <code>Group</code>.</li>
@@ -685,7 +694,7 @@ var mappingTableLabels = {
 				</tr>
 				<tr id="role-map-definition">
 					<th><a class="role-reference" href="#definition"><code>definition</code></a></th>
-                    <td>IAccessible2: Object attribute <code>xml-roles:definition</code></td>
+                    <td>Object attribute <code>xml-roles:definition</code></td>
                     <td>
                         <ul>
                             <li>Control Type is <code>Group</code>.</li>
@@ -699,8 +708,10 @@ var mappingTableLabels = {
 				</tr>
 				<tr id="role-map-dialog">
 					<th><a class="role-reference" href="#dialog"><code>dialog</code></a></th>
-					<td><code>ROLE_SYSTEM_DIALOG</code></td>
-          <td><code>Pane</code></td>
+					<td><code>ROLE_SYSTEM_DIALOG</code>
+					    <p class="ednote">Any IAccessible/IAccessible2 "Window" interface?</p>
+					</td>
+					<td><code>Pane</code></td>
 					<td>
 					  <ul>
 					    <li><code>ROLE_DIALOG</code></li>
@@ -766,7 +777,7 @@ var mappingTableLabels = {
 
 				<tr id="role-map-form">
 				  <th><a class="role-reference" href="#form"><code>form</code></a> [ARIA 1.1]</th>
-				  <td><code>IAccessible2: IA2_ROLE_FORM</code> + object attribute <code>xml-roles:form</code></td>
+				  <td><code>IA2_ROLE_FORM</code> + object attribute <code>xml-roles:form</code></td>
 				  <td>
                         <ul>
                             <li>Control Type is <code>Group</code>.</li>
@@ -782,8 +793,13 @@ var mappingTableLabels = {
 		  </tr>
 				<tr id="role-map-grid">
 					<th><a class="role-reference" href="#grid"><code>grid</code></a></th>
-					<td><code>ROLE_SYSTEM_TABLE</code> + object attribute <code>xml-roles:grid</code>
-	          <p>IAccessible2: Use <code>IAccessibleTable2</code> interface</p></td>
+					<td>
+					  <ul>
+					    <li><code>ROLE_SYSTEM_TABLE</code> + object attribute <code>xml-roles:grid</code></li>
+					    <li>Interface <code>IAccessibleTable2</code></li>
+					    <li class="ednote">Interface "Selection"?</li>
+					  </ul>
+					</td>
           <td><code>DataGrid</code> with <code>selection</code> pattern</td>
           <td>
             <ul>
@@ -825,7 +841,7 @@ var mappingTableLabels = {
 				<tr id="role-map-heading">
 					<th><a class="role-reference" href="#heading"><code>heading</code></a>
 					  <span class="el-context">&#8211; The heading level is specified by the <a href="#ariaLevel"><code>aria-level</code></a> property.</span></th>
-					<td>Expose as object attribute <code>xml-roles:heading</code>.<p>Also, expose <code>IAccessible2: IA2_ROLE_HEADING</code></p></td>
+					<td>Expose as object attribute <code>xml-roles:heading</code>.<p>Also, expose <code>IA2_ROLE_HEADING</code></p></td>
           <td><code>Text</code></td>
 					<td><code>ROLE_HEADING</code></td>
 					<td>AXRole: <code>AXHeading</code><br />
@@ -834,7 +850,7 @@ var mappingTableLabels = {
 				</tr>
 				<tr id="role-map-img">
 					<th><a class="role-reference" href="#img"><code>img</code></a></th>
-					<td><code>ROLE_SYSTEM_GRAPHIC</code></td>
+					<td><code>ROLE_SYSTEM_GRAPHIC</code><p class="ednote">Is there an "Interface Image"?</p></td>
           <td><code>Image</code></td>
 					<td>
 					  <ul>
@@ -848,10 +864,13 @@ var mappingTableLabels = {
 				</tr>
 				<tr id="role-map-link">
 					<th><a class="role-reference" href="#link"><code>link</code></a></th>
-					<td><code>ROLE_SYSTEM_LINK</code> + <code>STATE_LINKED</code>
-              <p>Also, expose <code>STATE_LINKED</code> on all descendants</p>
-              IAccessible2: Use <code>AccessibleHypertext</code> interface</td>
-          <td><code>HyperLink</code></td>
+					<td>
+					  <ul>
+					    <li><code>ROLE_SYSTEM_LINK</code> + <code>STATE_LINKED</code></li>
+					    <li>Expose <code>STATE_LINKED</code> on all descendants</li>
+					    <li>Interface <code>IAccessibleHypertext</code></li>
+					  </ul>
+					<td><code>HyperLink</code></td>
 					<td>
 					  <ul>
 					    <li><code>ROLE_LINK</code></li>
@@ -874,7 +893,7 @@ var mappingTableLabels = {
 				</tr>
 				<tr id="role-map-listbox">
 					<th><a class="role-reference" href="#listbox"><code>listbox</code></a></th>
-					<td><code>ROLE_SYSTEM_LIST</code></td>
+					<td><code>ROLE_SYSTEM_LIST</code><p class="ednote">Is there an "Interface Selection"?</p></td>
                     <td><code>List</code></td>
 					<td>
 					  <ul>
@@ -900,7 +919,7 @@ var mappingTableLabels = {
 				</tr>
 				<tr id="role-map-log">
 					<th><a class="role-reference" href="#log"><code>log</code></a></th>
-                    <td>IAccessible2: object attributes <code>xml-roles:log</code><code>;container-live:polite;live:polite;container-live-role:log</code>. </td>
+                    <td>Object attributes <code>xml-roles:log</code><code>;container-live:polite;live:polite;container-live-role:log</code>. </td>
                     <td>
                         <ul>
                           <li>Control Type is <code>Group</code>.</li>
@@ -915,7 +934,7 @@ var mappingTableLabels = {
                 </tr>
 				<tr id="role-map-main">
 					<th><a class="role-reference" href="#main"><code>main</code></a> [ARIA 1.1]</th>
-                    <td>IAccessible2:  <code>IA2_ROLE_LANDMARK</code> and object attribute <code>xml-roles:main</code></td>
+                    <td><code>IA2_ROLE_LANDMARK</code> and object attribute <code>xml-roles:main</code></td>
                     <td>
                         <ul>
                             <li>Control Type is <code>Group</code>.</li>
@@ -931,7 +950,7 @@ var mappingTableLabels = {
 				</tr>
 				<tr id="role-map-marquee">
 					<th><a class="role-reference" href="#marquee"><code>marquee</code></a></th>
-          <td><code>ROLE_SYSTEM_ANIMATION</code> + IAccessible2: object attribute <code>xml-roles:marquee;container-live:off;live:off</code></td>
+          <td><code>ROLE_SYSTEM_ANIMATION</code> + object attributes <code>xml-roles:marquee;container-live:off;live:off</code></td>
           <td><code>Text</code></td>
 					<td><code>ROLE_MARQUEE</code> + object attributes <code>container-live:off;live:off</code></td>
 					<td>AXRole: <code>AXGroup</code><br />
@@ -954,7 +973,7 @@ var mappingTableLabels = {
         </tr>
 				<tr id="role-map-menu">
 					<th><a class="role-reference" href="#menu"><code>menu</code></a></th>
-					<td><code>ROLE_SYSTEM_MENUPOPUP</code></td>
+					<td><code>ROLE_SYSTEM_MENUPOPUP</code><p class="ednote">Is there an "Interface Selection"?</p></td>
                      <td><code>Menu</code></td>
 					<td>
 					  <ul>
@@ -970,8 +989,8 @@ var mappingTableLabels = {
 				</tr>
 				<tr id="role-map-menubar">
 					<th><a class="role-reference" href="#menubar"><code>menubar</code></a></th>
-					<td><code>ROLE_SYSTEM_MENUBAR</code></td>
-          <td><code>MenuBar</code></td>
+					<td><code>ROLE_SYSTEM_MENUBAR</code><p class="ednote">Is there an "Interface Selection"?</p></td>
+                    <td><code>MenuBar</code></td>
 					<td>
 					  <ul>
 					    <li><code>ROLE_MENU_BAR</code></li>
@@ -997,7 +1016,7 @@ var mappingTableLabels = {
 				<tr id="role-map-menuitemcheckbox">
 					<th><a class="role-reference" href="#menuitemcheckbox"><code>menuitemcheckbox</code></a></th>
 					<td><code>ROLE_SYSTEM_CHECKBUTTON</code> or <code>ROLE_SYSTEM_MENUITEM</code>
-						<p><code>IAccessible2: IA2_ROLE_CHECK_MENU_ITEM</code> + object attribute <code>checkable:true</code></p></td>
+						<p><code>IA2_ROLE_CHECK_MENU_ITEM</code> + object attribute <code>checkable:true</code></p></td>
 					<td><code>MenuItem</code> + <code>Toggle</code> Pattern</td>
 					<td><code>ROLE_CHECK_MENU_ITEM</code> + <code>STATE_CHECKABLE</code></td>
 					<td>AXRole: <code>AXMenuItem</code><br />
@@ -1009,7 +1028,7 @@ var mappingTableLabels = {
 				<tr id="role-map-menuitemradio">
 					<th><a class="role-reference" href="#menuitemradio"><code>menuitemradio</code></a></th>
 					<td><code>ROLE_SYSTEM_RADIOBUTTON</code> or <code>ROLE_SYSTEM_MENUITEM</code>
-						<p><code>IAccessible2: IA2_ROLE_RADIO_MENU_ITEM</code> + object attribute <code>checkable:true</code></p></td>
+						<p><code>IA2_ROLE_RADIO_MENU_ITEM</code> + object attribute <code>checkable:true</code></p></td>
 					<td><code>MenuItem</code> + <code>Toggle</code> Pattern + <code>SelectionItem</code> Pattern
 						<p>If <code>aria-checked="true"</code>:</p>
 						<ol>
@@ -1032,7 +1051,7 @@ var mappingTableLabels = {
 				</tr>
 				<tr id="role-map-navigation">
                     <th><a class="role-reference" href="#navigation"><code>navigation</code></a> [ARIA 1.1]</th>
-                    <td>IAccessible2:  <code>IA2_ROLE_LANDMARK</code> and object attribute <code>xml-roles:navigation</code></td>
+                    <td><code>IA2_ROLE_LANDMARK</code> and object attribute <code>xml-roles:navigation</code></td>
                     <td>
                        <ul>
                             <li>Control Type is <code>Group</code>.</li>
@@ -1065,7 +1084,7 @@ var mappingTableLabels = {
       	</tr>
         <tr id="role-map-note">
 					<th><a class="role-reference" href="#note"><code>note</code></a></th>
-            <td><code>IAccessible2: IA2_ROLE_NOTE</code></td>
+            <td><code>IA2_ROLE_NOTE</code></td>
             <td>
                 <ul>
                   <li>Control Type is <code>Group</code>.</li>
@@ -1081,7 +1100,7 @@ var mappingTableLabels = {
 					<th><a class="role-reference" href="#option"><code>option</code></a>
 					   <span class="el-context">&#8211; If <a class="state-reference" href="#aria-selected"><code>aria-selected</code></a> is undefined treat as <code>aria-selected = "false"</code>.</span></th>
 					<td><code>ROLE_SYSTEM_LISTITEM</code>
-		        <p>IAccessible2: If <a class="state-reference" href="#aria-checked"><code>aria-checked</code></a> is not <strong>undefined</strong>, support object attribute <code>checkable:true</code></p></td>
+		        <p>If <a class="state-reference" href="#aria-checked"><code>aria-checked</code></a> is not <strong>undefined</strong>, support object attribute <code>checkable:true</code></p></td>
           <td><code>ListItem</code> + <code>Invoke</code> pattern </td>
 					<td><code>ROLE_LIST_ITEM</code>
 						<p>If <a class="state-reference" href="#aria-checked"><code>aria-checked</code></a> is not <strong>undefined</strong>, support <code>STATE_CHECKABLE</code></p>
@@ -1111,7 +1130,13 @@ var mappingTableLabels = {
 		</tr>
 				<tr id="role-map-progressbar">
 					<th><a class="role-reference" href="#progressbar"><code>progressbar</code></a></th>
-					<td><code>ROLE_SYSTEM_PROGRESSBAR</code> + <code>STATE_SYSTEM_READONLY</code></td>
+					<td>
+					  <ul>
+					    <li><code>ROLE_SYSTEM_PROGRESSBAR</code> + <code>STATE_SYSTEM_READONLY</code></li>
+					    <li>Interface <code>IAcesssibleValue</code></li>
+					  </ul>
+					  <p class="ednote">What about warning re:  changing the <code>Value</code>?</p>
+					</td>
           <td><p><code>ProgressBar</code></p>
               <p>If any of the <code>aria-valuenow</code>, <code>aria-valuemax</code>, or  <code>aria-valuemin</code> properties are present, also implement the <code>RangeValue</code> pattern.</p></td>
 					<td>
@@ -1157,7 +1182,7 @@ var mappingTableLabels = {
 				</tr>
 				<tr id="role-map-region">
 					<th><a class="role-reference" href="#region"><code>region</code></a> [ARIA 1.1]</th>
-					<td>IAccessible2:  <code>IA2_ROLE_LANDMARK</code> and object attribute <code>xml-roles:region</code></td>
+					<td><code>IA2_ROLE_LANDMARK</code> and object attribute <code>xml-roles:region</code></td>
 					<td>
                         <ul>
                             <li>Control Type is <code>Group</code>.</li>
