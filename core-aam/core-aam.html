@@ -814,8 +814,11 @@ var mappingTableLabels = {
 				</tr>
 				<tr id="role-map-gridcell">
 					<th><a class="role-reference" href="#gridcell"><code>gridcell</code></a></th>
-					<td><code>ROLE_SYSTEM_CELL</code>
-	                    <p>IAccessible2: Use <code>IAccessibleTableCell</code> interface.</p>
+					<td>
+					  <ul>
+					    <li><code>ROLE_SYSTEM_CELL</code></li>
+					    <li>Interface <code>IAccessibleTableCell</code></li>
+					  </ul>
 	                </td>
           <td><code>DataItem</code>
             <p>Also requires <code>selectionitem</code> pattern; <code>selectionContainer</code> property must reference the parent <code>grid</code> object</p></td>
@@ -1198,8 +1201,12 @@ var mappingTableLabels = {
 				</tr>
 				<tr id="role-map-row">
 					<th><a class="role-reference" href="#row"><code>row</code></a></th>
-					<td><code>ROLE_SYSTEM_ROW</code> unless inside a <a class="role-reference" href="#tree"><code>tree</code></a> or <a class="role-reference" href="#treegrid"><code>treegrid</code></a>, in which case <code>ROLE_SYSTEM_OUTLINEITEM</code>
-                        <p>IAccessible2: Used to help support: <code>IAccessibleTable2</code> interface for the container <a class="role-reference" href="#grid"><code>grid</code></a> role</p></td>
+					<td>
+					  <ul>
+					    <li><code>ROLE_SYSTEM_ROW</code> unless inside a <a class="role-reference" href="#tree"><code>tree</code></a> or <a class="role-reference" href="#treegrid"><code>treegrid</code></a>, in which case <code>ROLE_SYSTEM_OUTLINEITEM</code></li>
+					    <li>Interface <code>IAccessibleTable2</code> for the container <a class="role-reference" href="#grid"><code>grid</code></a> role</li>
+					  </ul>
+                    </td>
                     <td><p><code>DataItem</code></p>
                         <p>Also requires <code>selectionitem</code> pattern</p></td>
 					<td><code>ROLE_TABLE_ROW</code></td>
