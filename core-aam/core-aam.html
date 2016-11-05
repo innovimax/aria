@@ -514,7 +514,6 @@ var mappingTableLabels = {
 					<th><a class="role-reference" href="#alertdialog"><code>alertdialog</code></a></th>
 					<td><code>ROLE_SYSTEM_DIALOG</code><br />
                         <p>The user agent SHOULD fire <code>EVENT_SYSTEM_ALERT</code> <sup>[<a href="#ftn.note2">Note 2</a>]</sup></p>
-					    <p class="ednote">Any IAccessible/IAccessible2 "Window" interface?</p>
                     <td><code>Pane</code><br />
                         <p>The user agent SHOULD fire a system alert event.<sup>[<a href="#ftn.note2">Note 2</a>]</sup></p></td>
 					<td>
@@ -709,7 +708,6 @@ var mappingTableLabels = {
 				<tr id="role-map-dialog">
 					<th><a class="role-reference" href="#dialog"><code>dialog</code></a></th>
 					<td><code>ROLE_SYSTEM_DIALOG</code>
-					    <p class="ednote">Any IAccessible/IAccessible2 "Window" interface?</p>
 					</td>
 					<td><code>Pane</code></td>
 					<td>
@@ -1224,8 +1222,12 @@ var mappingTableLabels = {
 		  </tr>
 				<tr id="role-map-rowheader">
 					<th><a class="role-reference" href="#rowheader"><code>rowheader</code></a></th>
-					<td><code>ROLE_SYSTEM_ROWHEADER</code>
-		        <p>IAccessible2: Used to help support <code>IAccessibleTable2</code> interface for the container <a class="role-reference" href="#grid"><code>grid</code></a> role</p></td>
+					<td>
+					  <ul>
+					    <li><code>ROLE_SYSTEM_ROWHEADER</code></li>
+					    <li>Interface <code>IAccessibleTableCell</code></li>
+					    <li>Interface <a href="http://accessibility.linuxfoundation.org/a11yspecs/ia2/docs/html/interface_i_accessible_table2.html"><code>IAccessibleTable2</code></a> for the container <a class="role-reference" href="#grid"><code>grid</code></a> role</li>
+					  </ul>
           <td><code>HeaderItem</code></td>
 					<td><ul>
 					  <li><code>ROLE_ROW_HEADER</code></li>
@@ -1239,7 +1241,13 @@ var mappingTableLabels = {
 				</tr>
 				<tr id="role-map-scrollbar">
 					<th><a class="role-reference" href="#scrollbar"><code>scrollbar</code></a></th>
-          <td><code>ROLE_SYSTEM_SCROLLBAR</code></td>
+				<td>
+					  <ul>
+					    <li><code>ROLE_SYSTEM_SCROLLBAR</code></li>
+					    <li>Interface <code>IAcesssibleValue</code></li>
+					  </ul>
+					  <p class="ednote">What about warning re:  changing the <code>Value</code>?</p>
+				</td>
           <td><code>scrollbar</code></td>
           <td>
             <ul>
@@ -1320,7 +1328,13 @@ var mappingTableLabels = {
 				</tr>
 				<tr id="role-map-slider">
 					<th><a class="role-reference" href="#slider"><code>slider</code></a></th>
-					<td><code>ROLE_SYSTEM_SLIDER</code></td>
+					<td>
+					  <ul>
+					    <li><code>ROLE_SYSTEM_SLIDER</code></li>
+					    <li>Interface <code>IAcesssibleValue</code></li>
+					  </ul>
+					  <p class="ednote">What about warning re:  changing the <code>Value</code>?</p>
+					</td>
                     <td><code>Slider</code></td>
 					<td>
 					  <ul>
@@ -1335,7 +1349,13 @@ var mappingTableLabels = {
 				</tr>
 				<tr id="role-map-spinbutton">
 					<th><a class="role-reference" href="#spinbutton"><code>spinbutton</code></a></th>
-					<td><code>ROLE_SYSTEM_SPINBUTTON</code></td>
+					<td>
+					  <ul>
+					    <li><code>ROLE_SYSTEM_SPINBUTTON</code></li>
+					    <li>Interface <code>IAcesssibleValue</code></li>
+					  </ul>
+					  <p class="ednote">What about warning re:  changing the <code>Value</code>?</p>
+					</td>
           <td><code>Spinner</code></td>
 					<td>
 					  <ul>
@@ -1350,8 +1370,7 @@ var mappingTableLabels = {
 				</tr>
 				<tr id="role-map-status">
 					<th><a class="role-reference" href="#status"><code>status</code></a></th>
-					<td><p><code>ROLE_SYSTEM_STATUSBAR</code> + </p>
-			            <p>IAccessible2: object attributes <code>container-live:polite;live:polite;container-live-role:status</code></p></td>
+					<td><p><code>ROLE_SYSTEM_STATUSBAR</code> + object attributes <code>container-live:polite;live:polite;container-live-role:status</code></p></td>
                     <td>
                         <ul>
                             <li>Control Type: <code>Group</code></li>
@@ -1386,8 +1405,12 @@ var mappingTableLabels = {
 				</tr>
 				<tr id="role-map-table">
 					<th><a class="role-reference" href="#table"><code>table</code></a> [ARIA 1.1]</th>
-					<td><code>ROLE_SYSTEM_TABLE</code> + object attribute <code>xml-roles:table</code>
-	                    <p>IAccessible2: Use <code>IAccessibleTable2</code> interface.</p></td>
+					<td>
+					  <ul>
+					    <li><code>ROLE_SYSTEM_TABLE</code> + object attribute <code>xml-roles:table</code></li>
+					    <li>Interface <code>IAccessibleTable2</code></li>
+					  </ul>
+					</td>
                     <td>
                         <ul>
                             <li>Control Type is <code>Table</code>.</li>
@@ -1406,7 +1429,7 @@ var mappingTableLabels = {
 				</tr>
 				<tr id="role-map-tablist">
 					<th><a class="role-reference" href="#tablist"><code>tablist</code></a></th>
-					<td><code>ROLE_SYSTEM_PAGETABLIST</code></td>
+					<td><code>ROLE_SYSTEM_PAGETABLIST</code><p class="ednote">Is there an "Interface Selection"?</p></td>
           <td><code>Tab</code>
               <p>Also requires <code>selection</code> pattern</p></td>
 					<td>
@@ -1465,8 +1488,12 @@ var mappingTableLabels = {
 -->
 				<tr id="role-map-textbox">
 					<th><a class="role-reference" href="#textbox"><code>textbox</code></a></th>
-					<td><code>ROLE_SYSTEM_TEXT</code>
-		        <p><code>IAccessible2: IA2_STATE_SINGLE_LINE</code> if <a class="property-reference" href="#aria-multiline"><code>aria-multiline</code></a> is not <code>&quot;true&quot;</code></p></td>
+					<td>
+					  <ul>
+					    <li><code>ROLE_SYSTEM_TEXT</code></li>
+					    <li><code>IA2_STATE_SINGLE_LINE</code> if <a class="property-reference" href="#aria-multiline"><code>aria-multiline</code></a> is not <code>&quot;true&quot;</code></li>
+					  </ul>
+					</td>
                     <td>Control Type is <code>Edit</code></td>
 					<td>
 					  <ul>
@@ -1486,7 +1513,7 @@ var mappingTableLabels = {
 				</tr>
 				<tr id="role-map-timer">
 					<th><a class="role-reference" href="#timer"><code>timer</code></a></th>
-          <td>IAccessible2: Object attribute <code>xml-roles:timer;container-live:off;live:off;container-live-role:timer</code></td>
+          <td>Object attribute <code>xml-roles:timer;container-live:off;live:off;container-live-role:timer</code></td>
           <td>Expose as text string in <code>AriaRole</code></td>
           <td><code>ROLE_TIMER</code> + object attributes <code>container-live:off;live:off;container-live-role:timer</code></td>
           <td>AXRole: <code>AXGroup</code><br />
@@ -1513,7 +1540,7 @@ var mappingTableLabels = {
 				</tr>
 				<tr id="role-map-tree">
 					<th><a class="role-reference" href="#tree"><code>tree</code></a></th>
-					<td><code>ROLE_SYSTEM_OUTLINE</code></td>
+					<td><code>ROLE_SYSTEM_OUTLINE</code><p class="ednote">Is there an "Interface Selection"?</p></td>
           <td><code>Tree</code></td>
 					<td>
 					  <ul>
@@ -1528,12 +1555,13 @@ var mappingTableLabels = {
 				</tr>
 				<tr id="role-map-treegrid">
 					<th><a class="role-reference" href="#treegrid"><code>treegrid</code></a></th>
-					<td><code>ROLE_SYSTEM_OUTLINE</code>
-              <p>IAccessible2: </p>
-              <ul>
-                <li>Use <code>IAccessibleTable2</code> interface</li>
-                <li>Object attribute <code>xml-roles:treegrid</code></li>
-              </ul></td>
+					<td>
+					  <ul>
+					    <li><code>ROLE_SYSTEM_OUTLINE</code></li>
+					    <li>Interface <code>IAccessibleTable2</code></li>
+					  </ul>
+					  <p class="ednote">Is there an "Interface Selection"?</p>
+					</td>
           <td><code>DataGrid</code></td>
 					<td>
 					  <ul>
@@ -1548,8 +1576,7 @@ var mappingTableLabels = {
 				</tr>
 				<tr id="role-map-treeitem">
 					<th><a class="role-reference" href="#treeitem"><code>treeitem</code></a></th>
-					<td><code>ROLE_SYSTEM_OUTLINEITEM</code>
-              <p>IAccessible2: If <a class="state-reference" href="#aria-checked"><code>aria-checked</code></a> is not <strong>undefined</strong>, support object attribute <code>checkable:true</code></p></td>
+					<td><code>ROLE_SYSTEM_OUTLINEITEM</code> + if <a class="state-reference" href="#aria-checked"><code>aria-checked</code></a> is not <strong>undefined</strong>, support object attribute <code>checkable:true</code></td>
           <td><code>TreeItem</code></td>
 					<td><code>ROLE_TREE_ITEM</code> + if <a class="state-reference" href="#aria-checked"><code>aria-checked</code></a> is not <strong>undefined</strong>, support <code>STATE_CHECKABLE</code></td>
 					<td>AXRole: <code>AXRow</code><br />
@@ -1623,10 +1650,9 @@ var mappingTableLabels = {
                 </tr>
                 <tr id="ariaAtomicTrue">
                   <th><a class="property-reference" href="#aria-atomic"><code>aria-atomic</code></a><code>=&quot;true&quot;</code></th>
-                  <td><p>IAccessible2: </p>
-                    <ul>
-                      <li>Expose as object attribute <code>atomic:true</code> and <code>container-atomic:true</code></li>
-                      <li>Expose as object attribute <code>container-atomic:true</code> on all descendants as well as <code>IA2_RELATION_MEMBER_OF</code> pointing to this element (the atomic root) as  described in <a href="#mapping_events_visibility">Changes to document content or node visibility</a>.</li>
+                  <td>
+                    <p>Expose as object attribute <code>atomic:true</code> and <code>container-atomic:true</code></p>
+                    <p>Expose as object attribute <code>container-atomic:true</code> on all descendants as well as <code>IA2_RELATION_MEMBER_OF</code> pointing to this element (the atomic root) as  described in <a href="#mapping_events_visibility">Changes to document content or node visibility</a>.</p>
                   </ul></td>
                   <td>Expose <code>atomic=true</code> in <code>AriaProperties</code></td>
                   <td><p>Expose as object attribute <code>atomic:true</code> and <code>container-atomic:true</code>. </p>
@@ -1635,7 +1661,7 @@ var mappingTableLabels = {
                 </tr>
                 <tr id="ariaAtomicFalse">
                   <th><a class="property-reference" href="#aria-atomic"><code>aria-atomic</code></a><code>=&quot;false&quot;</code> (default)</th>
-                  <td><p>IAccessible2: </p>
+                  <td>
                     <p><a href="#not_mapped">Not mapped*</a> &#8212; OPTIONAL &#8212; but if mapped:</p>
                     <ul>
                       <li>Expose as object attribute <code>atomic:false</code> and <code>container-atomic:false</code></li>
@@ -1653,13 +1679,13 @@ var mappingTableLabels = {
                 </tr>
                 <tr id="ariaAutocompleteInlineListBoth">
                   <th><a class="property-reference" href="#aria-autocomplete"><code>aria-autocomplete</code></a><code>=&quot;inline&quot;</code>, <code>&quot;list&quot;</code>, or <code>&quot;both&quot;</code></th>
-                  <td><p>IAccessible2: </p>
-                    <ul>
-                      <li>Object attribute <code>autocomplete:&lt;value&gt;</code>                      </li>
-                      <li>Expose the <code>IA2_STATE_SUPPORTS_AUTOCOMPLETION</code> equivalent state</li>
-                  </ul></td>
+                  <td>
+                    <p>Object attribute <code>autocomplete:&lt;value&gt;</code></p>
+                    <p>Expose the <code>IA2_STATE_SUPPORTS_AUTOCOMPLETION</code> equivalent state</p>
+                  </td>
                   <td>Expose <code>autocomplete=&lt;value&gt;</code> in <code>AriaProperties</code></td>
-                  <td>Object attribute <code>autocomplete:&lt;value&gt;</code>
+                  <td>
+                    <p>Object attribute <code>autocomplete:&lt;value&gt;</code></p>
                     <p>Expose the <code>SUPPORTS_AUTOCOMPLETION</code> equivalent state</p></td>
                   <td><a href="#not_mapped">Not mapped</a></td>
                 </tr>
@@ -1686,8 +1712,8 @@ var mappingTableLabels = {
                 </tr>
                 <tr id="ariaCheckedTrue">
                   <th><a class="state-reference" href="#aria-checked"><code>aria-checked</code></a><code>=&quot;true&quot;</code> (state)</th>
-                  <td>Set the <code>STATE_SYSTEM_CHECKED</code> state
-                  <p>IAccessible2: Expose object attribute <code>checkable:true</code></p></td>
+                  <td><p>Set the <code>STATE_SYSTEM_CHECKED</code> state</p>
+                  <p>Expose object attribute <code>checkable:true</code></p></td>
                   <td><p>Expose as <code>ToggleState</code> property in <code>Toggle</code> Control Pattern.</p>
                   <p><code>Toggle.ToggleState = On (1)</code></p></td>
                   <td><p>Expose <code>STATE_CHECKABLE</code></p>
@@ -1696,8 +1722,8 @@ var mappingTableLabels = {
                 </tr>
                 <tr id="ariaCheckedFalse">
                   <th><a class="state-reference" href="#aria-checked"><code>aria-checked</code></a><code>=&quot;false&quot;</code> (state)</th>
-                  <td>Clear the <code>STATE_SYSTEM_CHECKED</code> state
-                  <p>IAccessible2: Expose object attribute <code>checkable:true</code></p></td>
+                  <td><p>Clear the <code>STATE_SYSTEM_CHECKED</code> state</p>
+                  <p>Expose object attribute <code>checkable:true</code></p></td>
                   <td><p>Expose as <code>ToggleState</code> property in <code>Toggle</code> Control Pattern.</p>
                   <p><code>Toggle.ToggleState = Off (0)</code></p></td>
                   <td><p>Clear the <code>STATE_CHECKED</code> state</p>
@@ -1709,7 +1735,7 @@ var mappingTableLabels = {
                   <th><a class="state-reference" href="#aria-checked"><code>aria-checked</code></a><code>=&quot;mixed&quot;</code> (state)
                     <span class="el-context">&#8211; Treat as <code>&quot;false&quot;</code> for <a class="role-reference" href="#radio"><code>radio</code></a>, <a class="role-reference" href="#menuitemradio"><code>menuitemradio</code></a>, and <a class="role-reference" href="#switch"><code>switch</code></a> roles.</span></th>
                   <td>Set the <code>STATE_SYSTEM_MIXED</code> state
-                    <p>IAccessible2: Expose object attribute <code>checkable:true</code></p></td>
+                    <p>Expose object attribute <code>checkable:true</code></p></td>
                   <td><p>Expose as <code>ToggleState</code> property in <code>Toggle</code> Control Pattern.</p>
                   <p><code>Toggle.ToggleState = Indeterminate (2)</code></p></td>
                   <td>Expose <code>STATE_INDETERMINATE</code>, unless on a role of <a class="role-reference" href="#radio"><code>radio</code></a> or <a class="role-reference" href="#menuitemradio"><code>menuitemradio</code></a> (in those cases treat as <code>&quot;false&quot;</code>)
@@ -1798,19 +1824,17 @@ var mappingTableLabels = {
 
                 <tr id="ariaControls">
                   <th><a class="property-reference" href="#aria-controls"><code>aria-controls</code></a></th>
-                  <td><p>IAccessible2: </p>
-                    <ul>
-                      <li>Expose pointer to the accessible object in <code>IA2_RELATION_CONTROLLER_FOR</code>                      </li>
-                      <li>Expose reverse relations as described in <a href="#mapping_additional_relations">Relations</a>.</li>
-                  </ul></td>
+                  <td><p>Expose pointer to the accessible object in <code>IA2_RELATION_CONTROLLER_FOR</code> </p>
+                      <p>Expose reverse relations as described in <a href="#mapping_additional_relations">Relations</a>.</p>
+                  </td>
                   <td>Expose pointer to the accessible object using <code>ControllerFor</code> property</td>
-                  <td>Expose pointer to the accessible object <code>RELATION_CONTROLLER_FOR</code>
+                  <td><p>Expose pointer to the accessible object <code>RELATION_CONTROLLER_FOR</code></p>
                     <p>Expose reverse relations as described in <a href="#mapping_additional_relations">Relations</a>.</p></td>
                   <td><code>array AXLinkedUIElements</code> contains pointers to nodes matching IDREFs</td>
                 </tr>
                 <tr id="ariaCurrent">
                   <th><a class="state-reference" href="#aria-current"><code>aria-current</code></a> (state) [ARIA 1.1] </th>
-                  <td><p>IAccessible2: </p>
+                  <td>
                     <ul>
                       <li>Expose the value of <code>aria-current</code> in object attribute <code>active:&lt;value&gt;</code>.</li>
                     </ul>
@@ -1833,8 +1857,7 @@ var mappingTableLabels = {
                 </tr>
                 <tr id="ariaDescribedBy">
                   <th><a class="property-reference" href="#aria-describedby"><code>aria-describedby</code></a></th>
-                	<td>Use in calculating the accessible Description as described in <a href="#mapping_additional_nd">Name Computation</a>. Expose in <code>accDescription</code> property.
-                    <p>IAccessible2: </p>
+                	<td><p>Use in calculating the accessible Description as described in <a href="#mapping_additional_nd">Name Computation</a>. Expose in <code>accDescription</code> property.</p>
                   <p>If the referenced objects are in the accessibility tree, expose pointers to them using <code>IA2_RELATION_DESCRIBED_BY</code>, and expose reverse relations as described in <a href="#mapping_additional_relations">Relations</a>.</p></td>
                   <td><p>Use in calculating the accessible Description as described in <a href="#mapping_additional_nd">Name Computation</a>. Expose in the <code>FullDescription</code> property.</p>
                   <p>If the referenced objects are in the accessibility tree, expose pointers to the referenced accessible objects using the <code>DescribedBy</code> property.</p></td>
@@ -1845,7 +1868,6 @@ var mappingTableLabels = {
                 <tr id="ariaDetails">
                   <th>[ARIA 1.1] <a class="property-reference" href="#aria-details"><code>aria-details</code></a></th>
                   <td>
-		   <p>IAccessible2: </p>
 		   <p>If the referenced object is in the accessibility tree, expose a pointer to the accessible object using <code>IA2_RELATION_DETAILS</code>, and expose reverse relations as described in <a href="#mapping_additional_relations">Relations</a>.</p>
 		  </td>
                   <td>TBD.</td>
@@ -1872,14 +1894,14 @@ var mappingTableLabels = {
                 </tr>
                 <tr id="ariaDropeffectMoveLinkExecutePopup">
                   <th><a class="property-reference" href="#aria-dropeffect"><code>aria-dropeffect</code></a><code>=&quot;copy&quot;</code>, <code>&quot;move&quot;</code>, <code>&quot;link&quot;</code>, <code>&quot;execute&quot;</code>, or <code>&quot;popup&quot;</code> (state)</th>
-                  <td>IAccessible2: Expose as object attribute <code>dropeffect:&lt;value&gt;</code></td>
+                  <td>Expose as object attribute <code>dropeffect:&lt;value&gt;</code></td>
                   <td>Expose <code>dropeffect=&lt;value&gt;</code> in <code>AriaProperties</code></td>
                   <td>Expose as object attribute <code>dropeffect:&lt;value&gt;</code></td>
                   <td><code>array AXDropEffects</code></td>
                 </tr>
                 <tr id="ariaDropeffectNone">
                   <th><a class="property-reference" href="#aria-dropeffect"><code>aria-dropeffect</code></a><code>=&quot;none&quot;</code> (state) (default)</th>
-                  <td><p>IAccessible2: Expose as object attribute <code>dropeffect:none</code> if there are no other valid tokens.</p>
+                  <td><p>Expose as object attribute <code>dropeffect:none</code> if there are no other valid tokens.</p>
                   <p><a href="#not_mapped">Not mapped</a> if not specified by the author.</p></td>
                   <td><a href="#not_mapped">Not mapped*</a></td>
                   <td><p>Expose as object attribute <code>dropeffect:none</code> if there are no other valid tokens.</p>
@@ -1889,7 +1911,6 @@ var mappingTableLabels = {
                 <tr id="ariaErrorMessage">
                   <th>[ARIA 1.1]  <a class="property-reference" href="#aria-errormessage"><code>aria-errormessage</code></a></th>
                   <td>
-                  <p>IAccessible2: </p>
                    <p>If the referenced object is in the accessibility tree, expose a pointer to the accessible object using <code>IA2_RELATION_ERROR_MESSAGE</code>, and expose reverse relations as described in <a href="#mapping_additional_relations">Relations</a>.</p>
 		  </td>
                   <td>Expose pointer to the target accessible object using <code>ControllerFor</code> property.</td>
@@ -1921,10 +1942,8 @@ var mappingTableLabels = {
                 </tr>
                 <tr id="ariaFlowto">
                   <th><a class="property-reference" href="#aria-flowto"><code>aria-flowto</code></a></th>
-                  <td><p>IAccessible2: </p>
-                    <ul>
-                      <li>Expose reference to the accessible object in <code>IA2_RELATION_FLOW_TO</code>                      </li>
-                      <li>Expose reverse relations as described in <a href="#mapping_additional_relations">Relations</a>.</li>
+                  <td>Expose reference to the accessible object in <code>IA2_RELATION_FLOW_TO</code>
+                      <p>Expose reverse relations as described in <a href="#mapping_additional_relations">Relations</a>.</p>
                   </ul></td>
                   <td>Expose a reference to the accessible object in <code>FlowsTo</code> property</td>
                   <td>Expose reference to the accessible object in <code>RELATION_FLOWS_TO</code>
@@ -1933,14 +1952,14 @@ var mappingTableLabels = {
                 </tr>
                 <tr id="ariaGrabbedTrue">
                   <th><a class="state-reference" href="#aria-grabbed"><code>aria-grabbed</code></a><code>=&quot;true&quot;</code>(state)</th>
-                  <td>IAccessible2: Object attribute <code>grabbed:true</code></td>
+                  <td>Object attribute <code>grabbed:true</code></td>
                   <td>Expose as <code>grabbed=true</code> in <code>AriaProperties</code></td>
                   <td>Object attribute <code>grabbed:true</code></td>
                   <td><code>boolean AXGrabbed: YES</code></td>
                 </tr>
                 <tr id="ariaGrabbedFalse">
                   <th><a class="state-reference" href="#aria-grabbed"><code>aria-grabbed</code></a><code>="false"</code>(state)</th>
-                  <td>IAccessible2: Object attribute <code>grabbed:false</code></td>
+                  <td>Object attribute <code>grabbed:false</code></td>
                   <td>Expose as <code>grabbed=false</code> in <code>AriaProperties</code></td>
                   <td>Object attribute <code>grabbed:false</code></td>
                   <td><code>boolean AXGrabbed: NO</code></td>
@@ -1954,9 +1973,9 @@ var mappingTableLabels = {
                 </tr>
                 <tr id="ariaHaspopupTrue">
                   <th><a class="property-reference" href="#aria-haspopup"><code>aria-haspopup</code></a><code>=&quot;true&quot;</code></th>
-                  <td>Expose as <code>STATE_SYSTEM_HASPOPUP</code>. If on a push button, change the role to <code>ROLE_SYSTEM_BUTTONMENU</code>
-		              <p>IAccessible2:</p>
+                  <td>
                       <ul>
+                        <li>Expose as <code>STATE_SYSTEM_HASPOPUP</code>. If on a push button, change the role to <code>ROLE_SYSTEM_BUTTONMENU</code></li>
                         <li>Expose as object attribute <code>haspopup:true</code></li>
                       </ul>
                   </td>
@@ -1972,9 +1991,9 @@ var mappingTableLabels = {
                 </tr>
                 <tr id="ariaHaspopupFalse">
                   <th><a class="property-reference" href="#aria-haspopup"><code>aria-haspopup</code></a><code>=&quot;false&quot;</code> (default)</th>
-                  <td>Clear the <code>HASPOPUP</code> state. If specified on a push button, change the role to <code>ROLE_SYSTEM_BUTTONMENU</code>
-                    <p>IAccessible2:</p>
+                  <td>
                     <ul>
+                      <li>Clear the <code>HASPOPUP</code> state. If specified on a push button, change the role to <code>ROLE_SYSTEM_BUTTONMENU</code></li>
                       <li>Expose as object attribute <code>haspopup:false</code></li>
                     </ul>
                   </td>
@@ -1989,9 +2008,9 @@ var mappingTableLabels = {
                 </tr>
                 <tr id="ariaHaspopupDialog">
                   <th>[ARIA 1.1] <a class="property-reference" href="#aria-haspopup"><code>aria-haspopup</code></a><code>=&quot;dialog&quot;</code></th>
-                  <td>Expose as <code>STATE_SYSTEM_HASPOPUP</code>
-                    <p>IAccessible2:</p>
+                  <td>
                       <ul>
+                        <li>Expose as <code>STATE_SYSTEM_HASPOPUP</code></li>
                         <li>Expose as object attribute <code>haspopup:dialog</code></li>
                       </ul>
                   </td>
@@ -2007,9 +2026,9 @@ var mappingTableLabels = {
                 </tr>
                 <tr id="ariaHaspopupListbox">
                   <th>[ARIA 1.1] <a class="property-reference" href="#aria-haspopup"><code>aria-haspopup</code></a><code>=&quot;listbox&quot;</code> (default for role <a class="role-reference" href="#combobox"><code>combobox</code></a>)</th>
-                  <td>Expose as <code>STATE_SYSTEM_HASPOPUP</code>
-                    <p>IAccessible2:</p>
+                  <td>
                       <ul>
+                        <li>Expose as <code>STATE_SYSTEM_HASPOPUP</code></li>
                         <li>Expose as object attribute <code>haspopup:listbox</code></li>
                       </ul>
                   </td>
@@ -2025,9 +2044,9 @@ var mappingTableLabels = {
                 </tr>
                 <tr id="ariaHaspopupMenu">
                   <th>[ARIA 1.1] <a class="property-reference" href="#aria-haspopup"><code>aria-haspopup</code></a><code>=&quot;menu&quot;</code></th>
-                  <td>Expose as <code>STATE_SYSTEM_HASPOPUP</code>. If on  a push button, change the role to <code>ROLE_SYSTEM_BUTTONMENU</code>.
-                    <p>IAccessible2:</p>
+                  <td>
                     <ul>
+                      <li>Expose as <code>STATE_SYSTEM_HASPOPUP</code>. If on  a push button, change the role to <code>ROLE_SYSTEM_BUTTONMENU</code></li>
                       <li>Expose as object attribute <code>haspopup:menu</code></li>
                     </ul>
                   </td>
@@ -2043,9 +2062,9 @@ var mappingTableLabels = {
                 </tr>
                 <tr id="ariaHaspopupTree">
                   <th>[ARIA 1.1] <a class="property-reference" href="#aria-haspopup"><code>aria-haspopup</code></a><code>=&quot;tree&quot;</code></th>
-                  <td>Expose as <code>STATE_SYSTEM_HASPOPUP</code>
-                    <p>IAccessible2:</p>
+                  <td>
                     <ul>
+                      <li>Expose as <code>STATE_SYSTEM_HASPOPUP</code></li>
                       <li>Expose as object attribute <code>haspopup:tree</code></li>
                     </ul>
                   </td>
@@ -2081,7 +2100,7 @@ var mappingTableLabels = {
                 </tr>
                 <tr id="ariaInvalidTrueSpellingGrammar">
                   <th><a class="state-reference" href="#aria-invalid"><code>aria-invalid</code></a><code>=&quot;true&quot;</code>, <code>&quot;spelling&quot;</code>, or <code>&quot;grammar&quot;</code> (state)</th>
-                  <td><p>IAccessible2: </p>
+                  <td>
                     <ul>
                       <li>Set <code>IA2_STATE_INVALID_ENTRY</code></li>
                       <li>Expose <code>invalid:&lt;value&gt;</code> as a text attribute (not an object attribute).</li>
@@ -2100,7 +2119,7 @@ var mappingTableLabels = {
                 </tr>
                 <tr id="ariaInvalidUnknown">
                   <th><a class="state-reference" href="#aria-invalid"><code>aria-invalid</code></a><code>=&lt;unknown value&gt;</code></th>
-                  <td><p>IAccessible2: </p>
+                  <td>
                     <ul>
                       <li>Set <code>IA2_STATE_INVALID_ENTRY</code></li>
                       <li>Expose <code>invalid:true</code> as a text attribute (not an object attribute).</li>
@@ -2116,7 +2135,7 @@ var mappingTableLabels = {
                 </tr>
                 <tr id="ariaInvalidFalse">
                   <th><a class="state-reference" href="#aria-invalid"><code>aria-invalid</code></a><code>=&quot;false&quot;</code> (state) (default)</th>
-                  <td>IAccessible2: Clear <code>IA2_STATE_INVALID_ENTRY</code> or equivalent state.</td>
+                  <td>Clear <code>IA2_STATE_INVALID_ENTRY</code> or equivalent state.</td>
                   <td>Expose <code>true</code> in <code>IsDataValidForForm</code> property</td>
                   <td><a href="#not_mapped">Not mapped*</a></td>
                   <td><code>AXInvalid: &quot;false&quot;</code></td>
@@ -2139,7 +2158,6 @@ var mappingTableLabels = {
                 <tr id="ariaLabelledBy">
                   <th><a class="property-reference" href="#aria-labelledby"><code>aria-labelledby</code></a></th>
                   <td><p>Use in calculating the accessible name as described in <a href="#mapping_additional_nd">Name Computation</a>. Expose in <code>accName</code> property.</p>
-                    <p>IAccessible2: </p>
                     <p>If the referenced objects are in the accessibility tree expose pointers to them using <code>IA2_RELATION_LABELLED_BY</code>, and expose reverse relations as described in <a href="#mapping_additional_relations">Relations</a>. </p></td>
                   <td><p>Use in calculating the accessible name as described in <a href="#mapping_additional_nd">Name Computation</a>. Expose in <code>Name</code> property.</p>
                       <p>If the referenced objects are in the accessibility tree, expose pointers to them using the <code>LabeledBy</code> property.</p></td>
@@ -2151,7 +2169,6 @@ var mappingTableLabels = {
                 <tr id="ariaLevel">
                   <th><a class="property-reference" href="#aria-level"><code>aria-level</code></a></th>
                   <td>
-                    <p>IAccessible2: </p>
                     <ul>
                       <li>Expose as object attribute <code>level:&lt;value&gt;</code>.</li>
                       <li>If the role supports <a class="property-reference" href="#aria-posinset"><code>aria-posinset</code></a> and <a class="property-reference" href="#aria-setsize"><code>aria-setsize</code></a>, expose in <a href="#mapping_group_position"><code>groupPosition()</code></a>.</li>
@@ -2167,10 +2184,8 @@ var mappingTableLabels = {
                 </tr>
                 <tr id="ariaLiveAssertive">
                   <th><a class="property-reference" href="#aria-live"><code>aria-live</code></a><code>=&quot;assertive&quot; </code> (default for role <a class="role-reference" href="#alert"><code>alert</code></a>)</th>
-                  <td><p>IAccessible2: </p>
-                    <ul>
-                      <li>Expose as object attribute <code>live:assertive</code> and <code>container-live:assertive</code>.</li>
-                      <li>Expose as object attribute <code>container-live:assertive</code> on all descendants as described in <a href="#mapping_events_visibility">Changes to document content or node visibility</a>.</li>
+                  <td>Expose as object attribute <code>live:assertive</code> and <code>container-live:assertive</code>.</p>
+                      <p>Expose as object attribute <code>container-live:assertive</code> on all descendants as described in <a href="#mapping_events_visibility">Changes to document content or node visibility</a>.</p>
                   </ul></td>
                   <td>Set <code>LiveSetting</code> Property to &quot;assertive&quot;</td>
                   <td>Expose as object attribute <code>live:assertive</code> and <code>container-live:assertive</code>.
@@ -2179,10 +2194,8 @@ var mappingTableLabels = {
                 </tr>
                 <tr id="ariaLivePolite">
                   <th><a class="property-reference" href="#aria-live"><code>aria-live</code></a><code>=&quot;polite&quot;</code> (default for role types <a class="role-reference" href="#log"><code>log</code></a> and <a class="role-reference" href="#status"><code>status</code></a>)</th>
-                  <td><p>IAccessible2: </p>
-                    <ul>
-                      <li>Expose as object attribute <code>live:polite</code> and <code>container-live:polite</code></li>
-                      <li>Expose as object attribute <code>container-live:polite</code> on all descendants as described in <a href="#mapping_events_visibility">Changes to document content or node visibility</a>.</li>
+                  <td>Expose as object attribute <code>live:polite</code> and <code>container-live:polite</code>
+                      <p>Expose as object attribute <code>container-live:polite</code> on all descendants as described in <a href="#mapping_events_visibility">Changes to document content or node visibility</a>.</p>
                   </ul></td>
                   <td>Set <code>LiveSetting</code> Property to &quot;polite&quot;</td>
                   <td>Expose as object attribute <code>live:polite</code> and <code>container-live:polite</code>.
@@ -2191,10 +2204,8 @@ var mappingTableLabels = {
                 </tr>
                 <tr id="ariaLiveOff">
                   <th><a class="property-reference" href="#aria-live"><code>aria-live</code></a><code>=&quot;off&quot;</code> (default)</th>
-                  <td><p>IAccessible2: </p>
-                    <ul>
-                      <li>Expose as object attribute <code>live:off</code> and <code>container-live:off</code></li>
-                      <li>Expose as object attribute <code>container-live:off</code>  on all descendants as described in <a href="#mapping_events_visibility">Changes to document content or node visibility</a>.</li>
+                  <td>Expose as object attribute <code>live:off</code> and <code>container-live:off</code>
+                      <p>Expose as object attribute <code>container-live:off</code>  on all descendants as described in <a href="#mapping_events_visibility">Changes to document content or node visibility</a>.</p>
                   </ul></td>
                   <td>Set <code>LiveSetting</code> property to &quot;off&quot;</td>
                   <td>Expose as object attribute <code>live:off</code> and <code>container-live:off</code>.
@@ -2203,21 +2214,21 @@ var mappingTableLabels = {
                 </tr>
                 <tr id="ariaModalTrue">
                   <th><a class="property-reference" href="#aria-modal"><code>aria-modal</code></a><code>=&quot;true&quot;</code></th>
-                  <td>IAccessible2: Set <code>IA2_STATE_MODAL</code></td>
+                  <td>Set <code>IA2_STATE_MODAL</code></td>
                   <td>Set <code>IsModal</code> property of <code>Window</code> control pattern to &quot;true&quot;</td>
                   <td>Set <code>STATE_MODAL</code></td>
                   <td>Prune the accessibility tree such that the background content is no longer exposed.  No specific property is set on the <a class="termref">accessible object</a> that corresponds to the <a class="termref">element</a> with <code>aria-modal="true"</code>.  Only the tree whose root is that modal accessible object is exposed.</td>
                 </tr>
                 <tr id="ariaModalFalse">
                   <th><a class="property-reference" href="#aria-modal"><code>aria-modal</code></a><code>=&quot;false&quot;</code></th>
-                  <td>IAccessible2: Clear <code>IA2_STATE_MODAL</code></td>
+                  <td>Clear <code>IA2_STATE_MODAL</code></td>
                   <td>Set <code>IsModal</code> property of <code>Window</code> control pattern to &quot;false&quot;</td>
                   <td>Clear <code>STATE_MODAL</code></td>
                   <td>Grow the accessibility tree such that the background content is exposed.  No specific property is set on the <a class="termref">accessible object</a> that corresponds to the <a class="termref">element</a> with <code>aria-modal="false"</code>.</td>
                 </tr>
                 <tr id="ariaMultilineTrue">
                   <th><a class="property-reference" href="#aria-multiline"><code>aria-multiline</code></a><code>=&quot;true&quot;</code></th>
-                  <td>IAccessible2: Set the <code>IA2_MULTI_LINE</code> state and clear <code>IA2_SINGLE_LINE</code></td>
+                  <td>Set the <code>IA2_MULTI_LINE</code> state and clear <code>IA2_SINGLE_LINE</code></td>
                   <td>Expose as <code>multiline=true</code> in <code>AriaProperties</code></td>
                   <td>Set <code>STATE_MULTI_LINE</code> and clear <code>STATE_SINGLE_LINE</code></td>
                   <td><p><a href="#not_mapped">Not mapped</a></p>
@@ -2225,7 +2236,7 @@ var mappingTableLabels = {
                 </tr>
                 <tr id="ariaMultilineFalse">
                   <th><a class="property-reference" href="#aria-multiline"><code>aria-multiline</code></a><code>=&quot;false&quot;</code> (default)</th>
-                  <td>IAccessible2: Clear the <code>IA2_MULTI_LINE</code> state, and set <code>IA2_SINGLE_LINE</code></td>
+                  <td>Clear the <code>IA2_MULTI_LINE</code> state, and set <code>IA2_SINGLE_LINE</code></td>
                   <td><a href="#not_mapped">Not mapped*</a></td>
                   <td>Set <code>STATE_SINGLE_LINE</code> and clear <code>STATE_MULTI_LINE</code></td>
                   <td><p><a href="#not_mapped">Not mapped</a></p>
@@ -2234,7 +2245,7 @@ var mappingTableLabels = {
                 <tr id="ariaMultiselectableTrue">
                   <th><a class="property-reference" href="#aria-multiselectable"><code>aria-multiselectable</code></a><code>=&quot;true&quot;</code></th>
                   <td><p>Set the <code>STATE_SYSTEM_MULTISELECTABLE</code> state. Expose <code>STATE_SYSTEM_EXTSELECTABLE</code> to exactly match <code>STATE_SYSTEM_</code><code>MULTISELECTABLE</code>.</p>
-                      <p>IAccessible2: For text elements, support the selection methods defined on the <code>IAccessibleText</code> interface</p>                  <p>See <a href="#mapping_events_selection">Selection</a> for details.</p></td>
+                      <p>For text elements, support the selection methods defined on the <code>IAccessibleText</code> interface</p>                  <p>See <a href="#mapping_events_selection">Selection</a> for details.</p></td>
                   <td><p>Set <code>CanSelectMultiple</code> property on the <code>Selection</code> Control Pattern.</p>
                       <p>See <a href="#mapping_events_selection">Selection</a> for details.</p></td>
                   <td><p>Expose <code>STATE_MULTISELECTABLE</code></p>
@@ -2252,7 +2263,7 @@ var mappingTableLabels = {
                 </tr>
                 <tr id="ariaOrientationHorizontal">
                   <th><a class="property-reference" href="#aria-orientation"><code>aria-orientation</code></a><code>=&quot;horizontal&quot;</code> (default)</th>
-                  <td>IAccessible2:
+                  <td>
                     <ul>
                       <li>Set: <code>IA2_STATE_HORIZONTAL</code></li>
                       <li>Clear: <code>IA2_STATE_VERTICAL</code></li>
@@ -2263,7 +2274,7 @@ var mappingTableLabels = {
                 </tr>
                 <tr id="ariaOrientationVertical">
                   <th><a class="property-reference" href="#aria-orientation"><code>aria-orientation</code></a><code>=&quot;vertical&quot;</code> (default for role <a class="role-reference" href="#scrollbar"><code>scrollbar</code></a>)</th>
-                  <td>IAccessible2:
+                  <td>
                     <ul>
                       <li>Set: <code>IA2_STATE_VERTICAL</code></li>
                       <li>Clear: <code>IA2_STATE_HORIZONTAL</code></li>
@@ -2274,11 +2285,8 @@ var mappingTableLabels = {
                 </tr>
                 <tr id="ariaOwns">
                   <th><a class="property-reference" href="#aria-owns"><code>aria-owns</code></a></th>
-                  <td><p>The accessibility tree is not modified.</p>
-                    <p>IAccessible2: </p>
-                    <ul>
-                      <li>Expose reverse relations as described in <a href="#mapping_additional_relations">Relations</a></li>
-                    </ul>
+                  <td><p class="ednote">The accessibility tree is not modified. [ARIA 1.1: no longer true?]</p>
+                    Expose reverse relations as described in <a href="#mapping_additional_relations">Relations</a>
                     <p>If multiple <a class="property-reference" href="#aria-owns"><code>aria-owns</code></a> relationships are found, use only the first one. </p></td>
                   <td>The structure should be reflected in the accessibility tree as directed by <a class="property-reference" href="#aria-owns"><code>aria-owns</code></a>. Map the elements that are referenced by this property  as children of the current element.
                       <p>If multiple <a class="property-reference" href="#aria-owns"><code>aria-owns</code></a> relationships are found, use only the first one. </p></td>
@@ -2288,7 +2296,7 @@ var mappingTableLabels = {
                 </tr>
                 <tr id="ariaPlaceholder">
                   <th>[ARIA 1.1] <a class="property-reference" href="#aria-placeholder"><code>aria-placeholder</code></a></th>
-                  <td><p>IAccessible2: Expose as object attribute <code>placeholder-text:&lt;value&gt;</code>. </p></td>
+                  <td><p>Expose as object attribute <code>placeholder-text:&lt;value&gt;</code>. </p></td>
                   <td><p>Expose as <code>placeholder=&lt;value&gt;</code> in <code>AriaProperties</code>. </p></td>
                   <td><p>Expose as object attribute <code>placeholder-text:&lt;value&gt;</code>.</p></td>
                   <td><p><code>AXPlaceholderValue: &lt;value&gt;</code>. </p></td>
@@ -2296,7 +2304,7 @@ var mappingTableLabels = {
                 <tr id="ariaPosinset">
                   <th><a class="property-reference" href="#aria-posinset"><code>aria-posinset</code></a>
                     <span class="el-context">&#8211; If not provided for relevant roles, user agents calculate <a class="property-reference" href="#aria-setsize"><code>aria-setsize</code></a> and <a class="property-reference" href="#aria-posinset"><code>aria-posinset</code></a> for each object in the container based on the number of objects in the <abbr title="Document Object Model">DOM</abbr>.</span></th>
-                  <td><p>IAccessible2: Expose as object attribute <code>posinset:&lt;value&gt;</code> and in <a href="#mapping_group_position"><code>groupPosition()</code></a>.</p></td>
+                  <td><p>Expose as object attribute <code>posinset:&lt;value&gt;</code> and in <a href="#mapping_group_position"><code>groupPosition()</code></a>.</p></td>
                   <td><p>Expose as <code>posinset=&lt;value&gt;</code> in <code>AriaProperties</code>. </p></td>
                   <td><p>Expose as  object attribute <code>posinset:&lt;value&gt;</code>.</p></td>
                   <td><code>AXARIAPosInSet: &lt;value&gt;</code></td>
@@ -2304,7 +2312,7 @@ var mappingTableLabels = {
                 <tr id="ariaPressedTrue">
                   <th><a class="state-reference" href="#aria-pressed"><code>aria-pressed</code></a><code>=&quot;true&quot;</code> (state)</th>
                   <td>Set the <code>STATE_SYSTEM_PRESSED</code> state.
-                      <p>IAccessible2: If on a button, expose the role as <code>IA2_ROLE_TOGGLE_BUTTON</code>. </p>
+                      <p>If on a button, expose the role as <code>IA2_ROLE_TOGGLE_BUTTON</code>. </p>
                   </td>
                   <td><p>Expose as <code>ToggleState property</code> of <code>Toggle</code> Control Pattern</p>
                       <p><code>Toggle.ToggleState = On (1)</code></p></td>                  
@@ -2316,7 +2324,7 @@ var mappingTableLabels = {
                 <tr id="ariaPressedMixed">
                   <th><a class="state-reference" href="#aria-pressed"><code>aria-pressed</code></a><code>=&quot;mixed&quot;</code> (state)</th>
                   <td>Set the <code>STATE_SYSTEM_PRESSED</code> state.
-                    <p>IAccessible2: If on a button, expose the role as <code>IA2_ROLE_TOGGLE_BUTTON</code>.  </p>
+                    <p>If on a button, expose the role as <code>IA2_ROLE_TOGGLE_BUTTON</code>.  </p>
                   </td>
                   <td><p>Expose as <code>ToggleState</code> property of <code>Toggle</code> Control Pattern</p>
                       <p><code>Toggle.ToggleState = Indeterminate (2)</code></p></td>
@@ -2328,7 +2336,7 @@ var mappingTableLabels = {
                 <tr id="ariaPressedFalse">
                   <th><a class="state-reference" href="#aria-pressed"><code>aria-pressed</code></a><code>=&quot;false&quot;</code> (state)</th>
                   <td>Clear the <code>STATE_SYSTEM_PRESSED</code> state
-                    <p>IAccessible2: If on a button, expose the role as <code>IA2_ROLE_TOGGLE_BUTTON</code>.  </p>
+                    <p>If on a button, expose the role as <code>IA2_ROLE_TOGGLE_BUTTON</code>.  </p>
                   </td>
                   <td><p>Expose as <code>ToggleState</code> property of <code>Toggle</code> Control Pattern</p>
                       <p><code>Toggle.ToggleState = Off (3)</code></p></td>
@@ -2359,17 +2367,15 @@ var mappingTableLabels = {
                 </tr>
                 <tr id="ariaReadonlyFalse">
                   <th><a class="property-reference" href="#aria-readonly"><code>aria-readonly</code></a><code>=&quot;false&quot;</code> (default)</th>
-                  <td>IAccessible2: Expose <code>IA2_STATE_EDITABLE</code></td>
+                  <td>Expose <code>IA2_STATE_EDITABLE</code></td>
                   <td>Set <code>Value.IsReadOnly=&quot;false&quot;</code></td>
                   <td><p>[ARIA 1.1] Expose <code>STATE_EDITABLE</code> if role is <a class="role-reference" href="#textbox">textbox</a>; otherwise, <a href="#notmapped">not mapped</a></td>
                   <td><code>AXValue</code>:  the <code>accessibilityIsAttributeSettable</code> method returns <code>YES</code>.</td>
                 </tr>
                 <tr id="ariaRelevantAdditionsRemovalsTextAll">
                   <th><a class="property-reference" href="#aria-relevant"><code>aria-relevant</code></a><code>=&quot;additions&quot;</code>, <code>&quot;removals&quot;</code>, <code>&quot;text&quot;</code>, or <code>&quot;all&quot;</code></th>
-                  <td><p>IAccessible2: </p>
-                    <ul>
-                      <li>Expose as object attribute <code>relevant:&lt;value&gt;</code> and <code>container-relevant:&lt;value&gt;</code></li>
-                      <li>Expose as object attribute <code>container-relevant:&lt;value&gt;</code> on all descendants  as described in <a href="#mapping_events_visibility">Changes to document content or node visibility</a>.</li>
+                  <td><p>Expose as object attribute <code>relevant:&lt;value&gt;</code> and <code>container-relevant:&lt;value&gt;</code></p>
+                      <p>Expose as object attribute <code>container-relevant:&lt;value&gt;</code> on all descendants  as described in <a href="#mapping_events_visibility">Changes to document content or node visibility</a>.</p>
                   </ul></td>
                   <td>Expose as <code>relevant=&lt;value&gt;</code> in <code>AriaProperties</code></td>
                   <td><p>Expose as object attribute <code>relevant:&lt;value&gt;</code> and <code>container-relevant:&lt;value&gt;</code>. </p>
@@ -2378,10 +2384,8 @@ var mappingTableLabels = {
                 </tr>
                 <tr id="ariaRelevantAdditionsText">
                   <th><a class="property-reference" href="#aria-relevant"><code>aria-relevant</code></a><code>=&quot;additions text&quot;</code> (Default)</th>
-                  <td><p>IAccessible2: </p>
-                    <ul>
-                      <li>Expose as object attribute <code>relevant:additions text</code> and <code>container-relevant:additions text</code></li>
-                      <li>Expose as object attribute <code>container-relevant:additions text</code>  on all descendants  as described in <a href="#mapping_events_visibility">Changes to document content or node visibility</a>.</li>
+                  <td><p>Expose as object attribute <code>relevant:additions text</code> and <code>container-relevant:additions text</code></p>
+                      <p>Expose as object attribute <code>container-relevant:additions text</code>  on all descendants  as described in <a href="#mapping_events_visibility">Changes to document content or node visibility</a>.</p>
                   </ul></td>
                   <td>Expose as <code>relevant=additions text</code> in <code>AriaProperties</code></td>
                   <td><p>Expose as object attribute <code>relevant:additions text</code> and <code>container-relevant:additions text</code>. </p>
@@ -2390,7 +2394,7 @@ var mappingTableLabels = {
                 </tr>
                 <tr id="ariaRequiredTrue">
                   <th><a class="property-reference" href="#aria-required"><code>aria-required</code></a><code>=&quot;true&quot;</code></th>
-                  <td>IAccessible2: Expose <code>IA2_STATE_REQUIRED</code></td>
+                  <td>Expose <code>IA2_STATE_REQUIRED</code></td>
                   <td>Expose as <code>IsrequiredForForm</code> property.</td>
                   <td>Expose <code>STATE_REQUIRED</code></td>
                   <td><code>boolean AXRequired: YES</code></td>
@@ -2498,7 +2502,7 @@ var mappingTableLabels = {
                   <th><a class="state-reference" href="#aria-selected"><code>aria-selected</code></a><code>=&quot;true&quot;</code> (state)</th>
                   <td>Expose <code>STATE_SYSTEM_SELECTED</code>
                     <p>Expose <code>STATE_SYSTEM_SELECTABLE</code></p>
-                  <p>IAccessible2: If not <code>DISABLED</code>, toggle between <code>&quot;true&quot;</code> and <code>&quot;false&quot;</code> as  appropriate when  <a class="property-reference" href="#aria-multiselectable"><code>aria-multiselectable</code></a> is used on an  ancestor as described in <a href="#mapping_events_selection">Selection</a>.</p></td>
+                  <p>If not <code>DISABLED</code>, toggle between <code>&quot;true&quot;</code> and <code>&quot;false&quot;</code> as  appropriate when  <a class="property-reference" href="#aria-multiselectable"><code>aria-multiselectable</code></a> is used on an  ancestor as described in <a href="#mapping_events_selection">Selection</a>.</p></td>
                   <td>Expose <code>IsSelected</code> property on <code>SelectionItem</code> Control Pattern.
                     <p>The availability of the <code>SelectionItem</code> Control Pattern indicates the item is selectable.</p></td>
                   <td>Expose <code>STATE_SELECTED</code> and <code>STATE_SELECTABLE</code>.
@@ -2509,7 +2513,7 @@ var mappingTableLabels = {
                   <th><a class="state-reference" href="#aria-selected"><code>aria-selected</code></a><code>=&quot;false&quot;</code> (state)</th>
                   <td>Clear <code>STATE_SYSTEM_SELECTED</code>
                       <p>Expose <code>STATE_SYSTEM_SELECTABLE</code></p>
-                      <p>IAccessible2: If not <code>DISABLED</code>, toggle between <code>&quot;true&quot;</code> and <code>&quot;false&quot;</code> as  appropriate when the <code>AccessibleSelection</code> interface is used on an  ancestor with <a class="property-reference" href="#aria-multiselectable"><code>aria-multiselectable</code></a> as described in <a href="#mapping_events_selection">Selection</a>.</p></td>
+                      <p>If not <code>DISABLED</code>, toggle between <code>&quot;true&quot;</code> and <code>&quot;false&quot;</code> as  appropriate when the <code>AccessibleSelection</code> interface is used on an  ancestor with <a class="property-reference" href="#aria-multiselectable"><code>aria-multiselectable</code></a> as described in <a href="#mapping_events_selection">Selection</a>.</p></td>
                   <td><a href="#not_mapped">Not mapped</a></td>
                   <td>Clear <code>STATE_SELECTED</code> and expose <code>STATE_SELECTABLE</code>.</td>
                   <td><code>boolean AXSelected: NO</code></td>
@@ -2525,14 +2529,14 @@ var mappingTableLabels = {
                 <tr id="ariaSetsize">
                   <th><a class="property-reference" href="#aria-setsize"><code>aria-setsize</code></a>
                     <span class="el-context">&#8211; If not provided for relevant roles, user agents calculate <a class="property-reference" href="#aria-setsize"><code>aria-setsize</code></a> and <a class="property-reference" href="#aria-posinset"><code>aria-posinset</code></a> for each object in the container based on the number of objects in the <abbr title="Document Object Model">DOM</abbr>.</span></th>
-                  <td><p>IAccessible2: Expose object attribute <code>setsize:&lt;value&gt;</code> and <a href="#mapping_group_position"><code>groupPosition()</code></a>. </p></td>
+                  <td><p>Expose object attribute <code>setsize:&lt;value&gt;</code> and <a href="#mapping_group_position"><code>groupPosition()</code></a>. </p></td>
                   <td><p>Expose as <code>setsize=&lt;value&gt;</code> in <code>AriaProperties. </code></p></td>
                   <td><p>Expose object attribute <code>setsize:&lt;value&gt;</code>. </p></td>
                   <td><code>AXARIASetSize: &lt;value&gt;</code></td>
                 </tr>
                 <tr id="ariaSortAscendingDescendingOther">
                   <th><a class="property-reference" href="#aria-sort"><code>aria-sort</code></a><code>=&quot;ascending&quot;,</code> <code>&quot;descending&quot;</code>, or <code>&quot;other&quot;</code></th>
-                  <td>IAccessible2: Expose as object attribute <code>sort:&lt;value&gt;</code></td>
+                  <td>Expose as object attribute <code>sort:&lt;value&gt;</code></td>
                   <td><p>Expose as <code>sort=&lt;value&gt;</code> in <code>AriaProperties.</code></p>
                       <p>If on an element that maps to <a href="https://msdn.microsoft.com/en-us/library/windows/apps/ee671630.aspx"><code>HeaderItem</code></a> controls (<a href="https://msdn.microsoft.com/en-us/library/windows/apps/hh466201.aspx"><code>th</code> </a> elements, and elements that  include the <code>&quot;columnheader&quot;</code> and <code>&quot;rowheader&quot;</code> role),  <code>ItemStatus=&quot;&lt;value&gt;&quot;</code>.</p></td>
                   <td>Expose as object attribute <code>sort:&lt;value&gt;</code></td>
@@ -2540,14 +2544,14 @@ var mappingTableLabels = {
                 </tr>
                 <tr id="ariaSortNone">
                   <th><a class="property-reference" href="#aria-sort"><code>aria-sort</code></a><code>=&quot;none&quot;</code> (default)</th>
-                  <td>IAccessible2: If specified, expose as object attribute <code>sort:&lt;value&gt;</code></td>
+                  <td>If specified, expose as object attribute <code>sort:&lt;value&gt;</code></td>
                   <td><a href="#not_mapped">Not mapped*</a></td>
                   <td>If specified, expose as object attribute <code>sort:&lt;value&gt;</code></td>
                   <td><a href="#not_mapped">Not mapped*</a></td>
                 </tr>
                 <tr id="ariaValueMax">
                   <th><a class="property-reference" href="#aria-valuemax"><code>aria-valuemax</code></a></th>
-                  <td>IAccessible2: Expose via <code>AccessibleValue</code> interface.
+                  <td>Expose via <code>AccessibleValue</code> interface.
                       <p>See <a href="#mapping_additional_widget-value">Widget values</a> for additional information</p></td>
                   <td>Expose the <code>Maximum</code> property in <code>RangeValue</code> Control Pattern
                       <p>See <a href="#mapping_additional_widget-value">Widget values</a> for additional information</p></td>
@@ -2558,7 +2562,7 @@ var mappingTableLabels = {
                 </tr>
                 <tr id="ariaValueMin">
                   <th><a class="property-reference" href="#aria-valuemin"><code>aria-valuemin</code></a></th>
-                  <td>IAccessible2: Expose via <code>AccessibleValue</code> interface
+                  <td>Expose via <code>AccessibleValue</code> interface
                       <p>See <a href="#mapping_additional_widget-value">Widget values</a> for additional information</p></td>
                   <td>Expose the <code>Minimum</code> property in <code>RangeValue</code> Control Pattern
                       <p>See <a href="#mapping_additional_widget-value">Widget values</a> for additional information</p></td>
@@ -2570,7 +2574,7 @@ var mappingTableLabels = {
                 <tr id="ariaValueNow">
                   <th><a class="property-reference" href="#aria-valuenow"><code>aria-valuenow</code></a></th>
                   <td>If <a class="property-reference" href="#aria-valuetext"><code>aria-valuetext</code></a> is not defined, expose via <code>IAccessible::get_accValue</code>
-                      <p>IAccessible2: Expose via <code>AccessibleValue</code> interface. </p>
+                      <p>Expose via <code>AccessibleValue</code> interface. </p>
                       <p>See <a href="#mapping_additional_widget-value">Widget values</a> for additional information</p></td>
                   <td>Expose <code>Value</code> property in <code>RangeValue</code> Control Pattern
                       <p>See <a href="#mapping_additional_widget-value">Widget values</a> for additional information</p></td>
@@ -2582,7 +2586,7 @@ var mappingTableLabels = {
                 <tr id="ariaValueText">
                   <th><a class="property-reference" href="#aria-valuetext"><code>aria-valuetext</code></a></th>
                   <td>Expose via <code>IAccessible::get_accValue</code>
-                      <p>IAccessible2: Expose as object attribute <code>valuetext:&lt;value&gt;</code></p>                    <p>See <a href="#mapping_additional_widget-value">Widget values</a> for additional information</p></td>
+                      <p>Expose as object attribute <code>valuetext:&lt;value&gt;</code></p>                    <p>See <a href="#mapping_additional_widget-value">Widget values</a> for additional information</p></td>
                   <td>Expose <code>Value</code> property in <code>Value</code> Control Pattern which can co-exist with <code>RangeValue</code> Control Pattern.
                       <p>See <a href="#mapping_additional_widget-value">Widget values</a> for additional information</p></td>
                   <td>Expose as object attribute <code>valuetext:&lt;value&gt;</code>                    <p>See <a href="#mapping_additional_widget-value">Widget values</a> for additional information</p></td>
@@ -2739,9 +2743,9 @@ var mappingTableLabels = {
           <tbody>
             <tr id="event-aria-activedescendant">
               <th><a class="property-reference" href="#aria-activedescendant"><code>aria-activedescendant</code></a></th>
-              <td><p>See <a href="#keyboard-focus_aria-activedescendant">Controlling focus with <code>aria-activedescendant</code></a></p>
+              <td>See <a href="#keyboard-focus_aria-activedescendant">Controlling focus with <code>aria-activedescendant</code></a>
                 <p>In addition: </p>
-                <p>IAccessible2: <code>IA2_EVENT_ACTIVE_DESCENDANT_CHANGED</code></p></td>
+                <p><code>IA2_EVENT_ACTIVE_DESCENDANT_CHANGED</code></p></td>
               <td>See <a href="#keyboard-focus_aria-activedescendant">Controlling focus with <code>aria-activedescendant</code></a></td>
               <td>See <a href="#keyboard-focus_aria-activedescendant">Controlling focus with <code>aria-activedescendant</code></a></td>
               <td>See <a href="#keyboard-focus_aria-activedescendant">Controlling focus with <code>aria-activedescendant</code></a>
@@ -2784,7 +2788,7 @@ var mappingTableLabels = {
             </tr>
             <tr id="event-aria-dropeffect">
                 <th><a class="property-reference" href="#aria-dropeffect"><code>aria-dropeffect</code></a> (property)</th>
-                <td>IAccessible2: <code>IA2_EVENT_OBJECT_ATTRIBUTE_CHANGED</code></td>
+                <td><code>IA2_EVENT_OBJECT_ATTRIBUTE_CHANGED</code></td>
                 <td>No event</td>
                 <td><code>object:property-change</code></td>
                 <td>No notification</td>
@@ -2801,14 +2805,14 @@ var mappingTableLabels = {
             <tr id="event-aria-grabbed">
               <th><a class="state-reference" href="#aria-grabbed"><code>aria-grabbed</code></a> (state)</th>
               <td><p><code>EVENT_OBJECT_SELECTION</code></p>
-                  <p>IAccessible2: <code>IA2_EVENT_OBJECT_ATTRIBUTE_CHANGED</code></p></td>
+                  <p><code>IA2_EVENT_OBJECT_ATTRIBUTE_CHANGED</code></p></td>
               <td>No event</td>
               <td><code>object:property-change</code></td>
               <td>No notification</td>
             </tr>
             <tr id="event-aria-hidden">
               <th><a class="state-reference" href="#aria-hidden"><code>aria-hidden</code></a> (state)</th>
-              <td>IAccessible2: <code> IA2_EVENT_OBJECT_ATTRIBUTE_CHANGED</code></td>
+              <td><code> IA2_EVENT_OBJECT_ATTRIBUTE_CHANGED</code></td>
               <td><code>StructureChangedEvent</code></td>
               <td><code>object:property-change</code></td>
               <td><code>AXUIElementDestroyed</code>,<br />
@@ -2889,21 +2893,21 @@ var mappingTableLabels = {
             </tr>
             <tr>
               <th>When text is removed</th>
-              <td>IAccessible2: <code>IA2_EVENT_TEXT_REMOVED</code></td>
+              <td><code>IA2_EVENT_TEXT_REMOVED</code></td>
               <td><code>EVENT_OBJECT_LIVEREGIONCHANGED</code></td>
               <td><code>text_changed::delete</code></td>
               <td>If in a <a class="termref">live region</a>, <code>AXLiveRegionChanged</code></td>
             </tr>
             <tr>
               <th>When text is inserted</th>
-              <td>IAccessible2: <code>IA2_EVENT_TEXT_INSERTED</code></td>
+              <td><code>IA2_EVENT_TEXT_INSERTED</code></td>
               <td><code>EVENT_OBJECT_LIVEREGIONCHANGED</code></td>
               <td><code>text_changed::insert</code></td>
               <td>If in a <a class="termref">live region</a>, <code>AXLiveRegionChanged</code></td>
             </tr>
             <tr>
               <th>When text is changed</th>
-              <td>IAccessible2: <code>IA2_EVENT_TEXT_REMOVE</code> and <code>IA2_EVENT_TEXT_INSERTED</code></td>
+              <td><code>IA2_EVENT_TEXT_REMOVE</code> and <code>IA2_EVENT_TEXT_INSERTED</code></td>
               <td><code>EVENT_OBJECT_LIVEREGIONCHANGED</code></td>
               <td><code>text_changed::delete</code> and <code>text_changed::insert</code></td>
               <td>If in a <a class="termref">live region</a>, <code>AXLiveRegionChanged</code></td>
