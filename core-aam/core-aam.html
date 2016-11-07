@@ -851,8 +851,13 @@ var mappingTableLabels = {
 				</tr>
 				<tr id="role-map-img">
 					<th><a class="role-reference" href="#img"><code>img</code></a></th>
-					<td><code>ROLE_SYSTEM_GRAPHIC</code><p class="ednote">Is there an "Interface Image"?</p></td>
-          <td><code>Image</code></td>
+					<td>
+					  <ul>
+					    <li><code>ROLE_SYSTEM_GRAPHIC</code></li>
+					    <li>Interface <code>IAccessibleImage</code></li>
+					  </ul>
+					</td>
+					<td><code>Image</code></td>
 					<td>
 					  <ul>
 					    <li><code>ROLE_IMAGE</code></li>
@@ -1136,7 +1141,6 @@ var mappingTableLabels = {
 					    <li><code>ROLE_SYSTEM_PROGRESSBAR</code> + <code>STATE_SYSTEM_READONLY</code></li>
 					    <li>Interface <code>IAcesssibleValue</code></li>
 					  </ul>
-					  <p class="ednote">What about warning re:  changing the <code>Value</code>?</p>
 					</td>
           <td><p><code>ProgressBar</code></p>
               <p>If any of the <code>aria-valuenow</code>, <code>aria-valuemax</code>, or  <code>aria-valuemin</code> properties are present, also implement the <code>RangeValue</code> pattern.</p></td>
@@ -1246,7 +1250,6 @@ var mappingTableLabels = {
 					    <li><code>ROLE_SYSTEM_SCROLLBAR</code></li>
 					    <li>Interface <code>IAcesssibleValue</code></li>
 					  </ul>
-					  <p class="ednote">What about warning re:  changing the <code>Value</code>?</p>
 				</td>
           <td><code>scrollbar</code></td>
           <td>
@@ -1333,7 +1336,6 @@ var mappingTableLabels = {
 					    <li><code>ROLE_SYSTEM_SLIDER</code></li>
 					    <li>Interface <code>IAcesssibleValue</code></li>
 					  </ul>
-					  <p class="ednote">What about warning re:  changing the <code>Value</code>?</p>
 					</td>
                     <td><code>Slider</code></td>
 					<td>
@@ -1354,7 +1356,6 @@ var mappingTableLabels = {
 					    <li><code>ROLE_SYSTEM_SPINBUTTON</code></li>
 					    <li>Interface <code>IAcesssibleValue</code></li>
 					  </ul>
-					  <p class="ednote">What about warning re:  changing the <code>Value</code>?</p>
 					</td>
           <td><code>Spinner</code></td>
 					<td>
