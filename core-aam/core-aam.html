@@ -795,7 +795,7 @@ var mappingTableLabels = {
 					  <ul>
 					    <li><code>ROLE_SYSTEM_TABLE</code> + object attribute <code>xml-roles:grid</code></li>
 					    <li>Interface <code>IAccessibleTable2</code></li>
-					    <li class="ednote">Interface "Selection"?</li>
+					    <li>Methods <code>IAccessible::accSelect()</code> and <code>IAccessible::get_accSelection()</code></li>
 					  </ul>
 					</td>
           <td><code>DataGrid</code> with <code>selection</code> pattern</td>
@@ -899,7 +899,12 @@ var mappingTableLabels = {
 				</tr>
 				<tr id="role-map-listbox">
 					<th><a class="role-reference" href="#listbox"><code>listbox</code></a></th>
-					<td><code>ROLE_SYSTEM_LIST</code><p class="ednote">Is there an "Interface Selection"?</p></td>
+					<td>
+					  <ul>
+					    <li><code>ROLE_SYSTEM_LIST</code></li>
+					    <li>Methods <code>IAccessible::accSelect()</code> and <code>IAccessible::get_accSelection()</code></li>
+					  </ul>
+					</td>
                     <td><code>List</code></td>
 					<td>
 					  <ul>
@@ -979,7 +984,12 @@ var mappingTableLabels = {
         </tr>
 				<tr id="role-map-menu">
 					<th><a class="role-reference" href="#menu"><code>menu</code></a></th>
-					<td><code>ROLE_SYSTEM_MENUPOPUP</code><p class="ednote">Is there an "Interface Selection"?</p></td>
+					<td>
+					  <ul>
+					    <li><code>ROLE_SYSTEM_MENUPOPUP</code>
+					    <li>Methods <code>IAccessible::accSelect()</code> and <code>IAccessible::get_accSelection()</code></li>
+					  </ul>
+					</td>
                      <td><code>Menu</code></td>
 					<td>
 					  <ul>
@@ -995,7 +1005,12 @@ var mappingTableLabels = {
 				</tr>
 				<tr id="role-map-menubar">
 					<th><a class="role-reference" href="#menubar"><code>menubar</code></a></th>
-					<td><code>ROLE_SYSTEM_MENUBAR</code><p class="ednote">Is there an "Interface Selection"?</p></td>
+					<td>
+					  <ul>
+					    <li><code>ROLE_SYSTEM_MENUBAR</code>
+					    <li>Methods <code>IAccessible::accSelect()</code> and <code>IAccessible::get_accSelection()</code></li>
+					  </ul>
+					</td>
                     <td><code>MenuBar</code></td>
 					<td>
 					  <ul>
@@ -1430,7 +1445,12 @@ var mappingTableLabels = {
 				</tr>
 				<tr id="role-map-tablist">
 					<th><a class="role-reference" href="#tablist"><code>tablist</code></a></th>
-					<td><code>ROLE_SYSTEM_PAGETABLIST</code><p class="ednote">Is there an "Interface Selection"?</p></td>
+					<td>
+					  <ul>
+					    <li><code>ROLE_SYSTEM_PAGETABLIST</code></li>
+					    <li>Methods <code>IAccessible::accSelect()</code> and <code>IAccessible::get_accSelection()</code></li>
+					  </ul>
+					</td>
           <td><code>Tab</code>
               <p>Also requires <code>selection</code> pattern</p></td>
 					<td>
@@ -1541,7 +1561,12 @@ var mappingTableLabels = {
 				</tr>
 				<tr id="role-map-tree">
 					<th><a class="role-reference" href="#tree"><code>tree</code></a></th>
-					<td><code>ROLE_SYSTEM_OUTLINE</code><p class="ednote">Is there an "Interface Selection"?</p></td>
+					<td>
+					  <ul>
+					    <li><code>ROLE_SYSTEM_OUTLINE</code></li>
+					    <li>Methods <code>IAccessible::accSelect()</code> and <code>IAccessible::get_accSelection()</code></li>
+					  </ul>
+					</td>
           <td><code>Tree</code></td>
 					<td>
 					  <ul>
@@ -1560,8 +1585,8 @@ var mappingTableLabels = {
 					  <ul>
 					    <li><code>ROLE_SYSTEM_OUTLINE</code></li>
 					    <li>Interface <code>IAccessibleTable2</code></li>
+					    <li>Methods <code>IAccessible::accSelect()</code> and <code>IAccessible::get_accSelection()</code></li>
 					  </ul>
-					  <p class="ednote">Is there an "Interface Selection"?</p>
 					</td>
           <td><code>DataGrid</code></td>
 					<td>
@@ -1654,7 +1679,7 @@ var mappingTableLabels = {
                   <td>
                     <p>Expose as object attribute <code>atomic:true</code> and <code>container-atomic:true</code></p>
                     <p>Expose as object attribute <code>container-atomic:true</code> on all descendants as well as <code>IA2_RELATION_MEMBER_OF</code> pointing to this element (the atomic root) as  described in <a href="#mapping_events_visibility">Changes to document content or node visibility</a>.</p>
-                  </ul></td>
+                  </td>
                   <td>Expose <code>atomic=true</code> in <code>AriaProperties</code></td>
                   <td><p>Expose as object attribute <code>atomic:true</code> and <code>container-atomic:true</code>. </p>
                   <p>Expose object attribute <code>container-atomic:true</code> on all descendants as well as <code>RELATION_MEMBER_OF</code> pointing to this element (the atomic root) as  described in <a href="#mapping_events_visibility">Changes to document content or node visibility</a>.</p></td>
@@ -1945,7 +1970,7 @@ var mappingTableLabels = {
                   <th><a class="property-reference" href="#aria-flowto"><code>aria-flowto</code></a></th>
                   <td>Expose reference to the accessible object in <code>IA2_RELATION_FLOW_TO</code>
                       <p>Expose reverse relations as described in <a href="#mapping_additional_relations">Relations</a>.</p>
-                  </ul></td>
+                  </td>
                   <td>Expose a reference to the accessible object in <code>FlowsTo</code> property</td>
                   <td>Expose reference to the accessible object in <code>RELATION_FLOWS_TO</code>
                     <p>Expose reverse relations as described in <a href="#mapping_additional_relations">Relations</a>.</p></td>
@@ -2185,9 +2210,9 @@ var mappingTableLabels = {
                 </tr>
                 <tr id="ariaLiveAssertive">
                   <th><a class="property-reference" href="#aria-live"><code>aria-live</code></a><code>=&quot;assertive&quot; </code> (default for role <a class="role-reference" href="#alert"><code>alert</code></a>)</th>
-                  <td>Expose as object attribute <code>live:assertive</code> and <code>container-live:assertive</code>.</p>
+                  <td><p>Expose as object attribute <code>live:assertive</code> and <code>container-live:assertive</code>.</p>
                       <p>Expose as object attribute <code>container-live:assertive</code> on all descendants as described in <a href="#mapping_events_visibility">Changes to document content or node visibility</a>.</p>
-                  </ul></td>
+                  </td>
                   <td>Set <code>LiveSetting</code> Property to &quot;assertive&quot;</td>
                   <td>Expose as object attribute <code>live:assertive</code> and <code>container-live:assertive</code>.
                   <p>Expose as object attribute <code>container-live:assertive</code> on all descendants as described in <a href="#mapping_events_visibility">Changes to document content or node visibility</a>.</p></td>
@@ -2197,7 +2222,7 @@ var mappingTableLabels = {
                   <th><a class="property-reference" href="#aria-live"><code>aria-live</code></a><code>=&quot;polite&quot;</code> (default for role types <a class="role-reference" href="#log"><code>log</code></a> and <a class="role-reference" href="#status"><code>status</code></a>)</th>
                   <td>Expose as object attribute <code>live:polite</code> and <code>container-live:polite</code>
                       <p>Expose as object attribute <code>container-live:polite</code> on all descendants as described in <a href="#mapping_events_visibility">Changes to document content or node visibility</a>.</p>
-                  </ul></td>
+                  </td>
                   <td>Set <code>LiveSetting</code> Property to &quot;polite&quot;</td>
                   <td>Expose as object attribute <code>live:polite</code> and <code>container-live:polite</code>.
                     <p>Expose as object attribute <code>container-live:polite</code> on all descendants as described in <a href="#mapping_events_visibility">Changes to document content or node visibility</a>.</p></td>
@@ -2207,7 +2232,7 @@ var mappingTableLabels = {
                   <th><a class="property-reference" href="#aria-live"><code>aria-live</code></a><code>=&quot;off&quot;</code> (default)</th>
                   <td>Expose as object attribute <code>live:off</code> and <code>container-live:off</code>
                       <p>Expose as object attribute <code>container-live:off</code>  on all descendants as described in <a href="#mapping_events_visibility">Changes to document content or node visibility</a>.</p>
-                  </ul></td>
+                  </td>
                   <td>Set <code>LiveSetting</code> property to &quot;off&quot;</td>
                   <td>Expose as object attribute <code>live:off</code> and <code>container-live:off</code>.
                     <p>Expose as object attribute <code>container-live:off</code> on all descendants as described in <a href="#mapping_events_visibility">Changes to document content or node visibility</a>.</p></td>
@@ -2377,7 +2402,7 @@ var mappingTableLabels = {
                   <th><a class="property-reference" href="#aria-relevant"><code>aria-relevant</code></a><code>=&quot;additions&quot;</code>, <code>&quot;removals&quot;</code>, <code>&quot;text&quot;</code>, or <code>&quot;all&quot;</code></th>
                   <td><p>Expose as object attribute <code>relevant:&lt;value&gt;</code> and <code>container-relevant:&lt;value&gt;</code></p>
                       <p>Expose as object attribute <code>container-relevant:&lt;value&gt;</code> on all descendants  as described in <a href="#mapping_events_visibility">Changes to document content or node visibility</a>.</p>
-                  </ul></td>
+                  </td>
                   <td>Expose as <code>relevant=&lt;value&gt;</code> in <code>AriaProperties</code></td>
                   <td><p>Expose as object attribute <code>relevant:&lt;value&gt;</code> and <code>container-relevant:&lt;value&gt;</code>. </p>
                   <p>Expose as object attribute <code>container-relevant:&lt;value&gt;</code> on all descendants  as described in <a href="#mapping_events_visibility">Changes to document content or node visibility</a>.</p></td>
@@ -2387,7 +2412,7 @@ var mappingTableLabels = {
                   <th><a class="property-reference" href="#aria-relevant"><code>aria-relevant</code></a><code>=&quot;additions text&quot;</code> (Default)</th>
                   <td><p>Expose as object attribute <code>relevant:additions text</code> and <code>container-relevant:additions text</code></p>
                       <p>Expose as object attribute <code>container-relevant:additions text</code>  on all descendants  as described in <a href="#mapping_events_visibility">Changes to document content or node visibility</a>.</p>
-                  </ul></td>
+                  </td>
                   <td>Expose as <code>relevant=additions text</code> in <code>AriaProperties</code></td>
                   <td><p>Expose as object attribute <code>relevant:additions text</code> and <code>container-relevant:additions text</code>. </p>
                       <p>Expose as object attribute <code>container-relevant:additions text</code> on all descendants as described in <a href="#mapping_events_visibility">Changes to document content or node visibility</a></p></td>
